@@ -28,7 +28,7 @@ domain: loganthomas.github.io
 url: httpss://loganthomas.github.io # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 github_username: loganthomas
-linkedin: logan-thomas
+linkedin_username: logan-thomas
 
 
 # Build settings
