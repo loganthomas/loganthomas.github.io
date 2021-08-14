@@ -27,18 +27,15 @@ description: # >- this means to ignore newlines until "baseurl:"
 domain: loganthomas.github.io
 url: httpss://loganthomas.github.io # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
+github_username: loganthomas
+linkedin: logan-thomas
+
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
 
-minima:
-  social_links:
-    twitter: __loges__
-    github: loganthomas
-    linkedin: logan-thomas
-    devto: loganthomas
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
