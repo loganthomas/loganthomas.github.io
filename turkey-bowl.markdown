@@ -4,7 +4,7 @@
 
 layout: page
 title: Turkey Bowl
-permalink: /turkey-bowl/
+permalink: /turkey_bowl/
 ---
 
 # Current Champ
