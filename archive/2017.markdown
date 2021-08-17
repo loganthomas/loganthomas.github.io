@@ -9,7 +9,8 @@ exclude: true
 
 ## Leaderboard
 _The 2017 season has been canceled due to lack of hustle. Deal with it._
-![](/assets/images/lack_of_hustle.JPG)
+![](/assets/images/lack_of_hustle.jpg)
+![](/assets/images/lack_of_hustle.png)
 
 
 [Archived Results](/turkey_bowl/archive/)
