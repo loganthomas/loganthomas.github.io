@@ -2,13 +2,14 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: page
-title: 2016
-permalink: turkey_bowl/archive/2016/
+title: 2017
+permalink: turkey_bowl/archive/2017/
 exclude: true
 ---
 
 ## Leaderboard
-<img src="/assets/images/2016/results_2016.JPG" width="300">
+_The 2017 season has been canceled due to lack of hustle. Deal with it._
+![](/assets/images/lack_of_hustle.JPG)
 
 
 [Archived Results](/turkey_bowl/archive/)

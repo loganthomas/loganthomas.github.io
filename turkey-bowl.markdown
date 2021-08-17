@@ -20,5 +20,16 @@ permalink: /turkey_bowl/
 
 *_COVID-19 Results_
 
+## Hall of Fame
+
+| Participant | Wins |
+| :---------- | :--- |
+| Dodd        | 2    |
+| Yeager      | 2    |
+| Emily       | 1    |
+| Cindy       | 1    |
+| Logan       | 0    |
+| Becca       | 0    |
+
 
 [Archived Results](/turkey_bowl/archive/)
