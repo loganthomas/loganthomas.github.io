@@ -11,24 +11,27 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.talks.size > 0 -%}
+  {%- if site.posts.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Tutorials" }}</h2> -->
     <ul class="post-list">
-      {%- for talk in site.talks reversed -%}
+      {%- for post in site.posts -%}
+      {%- if post.layout == "talk" -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ talk.date | date: date_format }}</span>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
-          <a class="post-link" href="{{ talk.url | relative_url }}">
-            {{ talk.title | escape }}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          {{ talk.excerpt }}
+          {{ post.excerpt }}
         {%- endif -%}
       </li>
+      {%- endif -%}
       {%- endfor -%}
     </ul>
   {%- endif -%}
 
 </article>
+

@@ -11,22 +11,24 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.tutorials.size > 0 -%}
+  {%- if site.posts.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Tutorials" }}</h2> -->
     <ul class="post-list">
-      {%- for tutorial in site.tutorials reversed -%}
+      {%- for post in site.posts -%}
+      {%- if post.layout == "tutorial" -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ tutorial.date | date: date_format }}</span>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
-          <a class="post-link" href="{{ tutorial.url | relative_url }}">
-            {{ tutorial.title | escape }}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          {{ tutorial.excerpt }}
+          {{ post.excerpt }}
         {%- endif -%}
       </li>
+      {%- endif -%}
       {%- endfor -%}
     </ul>
   {%- endif -%}
