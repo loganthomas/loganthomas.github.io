@@ -14,7 +14,7 @@ layout: default
   {%- if site.tutorials.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Tutorials" }}</h2> -->
     <ul class="post-list">
-      {%- for tutorial in site.tutorials -%}
+      {%- for tutorial in site.tutorials reversed -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ tutorial.date | date: date_format }}</span>

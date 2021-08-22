@@ -14,7 +14,7 @@ layout: default
   {%- if site.talks.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Tutorials" }}</h2> -->
     <ul class="post-list">
-      {%- for talk in site.talks -%}
+      {%- for talk in site.talks reversed -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ talk.date | date: date_format }}</span>
