@@ -30,6 +30,9 @@ minima:
     github: loganthomas
     linkedin: logan-thomas
     devto: loganthomas
+collections:
+  tutorials:
+    output: true
 
 # Build settings
 theme: minima
