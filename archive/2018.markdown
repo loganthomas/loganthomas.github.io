@@ -4,7 +4,6 @@
 layout: page
 title: 2018
 permalink: turkey_bowl/archive/2018/
-exclude: true
 ---
 
 ## Leaderboard

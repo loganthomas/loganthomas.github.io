@@ -1,0 +1,10 @@
+- name: About
+  link: /about/
+- name: Blog
+  link: /blog/
+- name: Tutorials
+  link: /tutorials/
+- name: Talks
+  link: /talks/
+- name: Turkey Bowl
+  link: /turkey_bowl/
