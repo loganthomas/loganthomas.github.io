@@ -33,6 +33,8 @@ minima:
 collections:
   tutorials:
     output: true
+  talks:
+    output: true
 
 # Build settings
 theme: minima
