@@ -7,6 +7,7 @@ permalink: /turkey_bowl/archive/
 exclude: true
 ---
 
+- [2021 Archived Results](/turkey_bowl/archive/2021)
 - [2020 Archived Results](/turkey_bowl/archive/2020)
 - [2019 Archived Results](/turkey_bowl/archive/2019)
 - [2018 Archived Results](/turkey_bowl/archive/2018)
