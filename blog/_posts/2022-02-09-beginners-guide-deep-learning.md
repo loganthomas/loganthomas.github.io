@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: deep-learning
 ---
-### [A Beginner's Guide to Deep Learning - Enthought, Inc.](https://www.enthought.com/a-beginners-guide-to-deep-learning/)
+### [A Beginner's Guide to Deep Learning - Enthought, Inc.](https://www.enthought.com/blog/a-beginners-guide-to-deep-learning/)
 Deep learning. By this point, we’ve all heard of it. *It’s the magic silver bullet that can fix any complex problem.*
 *It’s the special ingredient that can take any bland or rudimentary analysis and create an immense five course meal of actionable insights.*
 But, what is at the core of this machine learning technique?
@@ -14,6 +14,7 @@ Is it truly something that all companies need to invest in?
 Will implementing it bring immediate business value and create forever-increasing ROI?
 Or, is this some type of elusive marriage masked by marketing hype?
 Before even considering these questions, we need to take a step back and accurately define what deep learning is.
+
 
 [Read more here!](https://www.enthought.com/a-beginners-guide-to-deep-learning/){:target="_blank"}
 
