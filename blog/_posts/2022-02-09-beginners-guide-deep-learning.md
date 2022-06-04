@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: deep-learning
 ---
-### [A Beginner's Guide to Deep Learning - Enthought, Inc.](https://www.enthought.com/blog/a-beginners-guide-to-deep-learning/)
+### [A Beginner's Guide to Deep Learning - Enthought, Inc.](https://www.enthought.com/blog/a-beginners-guide-to-deep-learning/){:target="_blank"}
 Deep learning. By this point, we’ve all heard of it. *It’s the magic silver bullet that can fix any complex problem.*
 *It’s the special ingredient that can take any bland or rudimentary analysis and create an immense five course meal of actionable insights.*
 But, what is at the core of this machine learning technique?
@@ -18,6 +18,4 @@ Before even considering these questions, we need to take a step back and accurat
 
 [Read more here!](https://www.enthought.com/a-beginners-guide-to-deep-learning/){:target="_blank"}
 
-<a href="https://www.enthought.com/a-beginners-guide-to-deep-learning/">
-  <img src="/assets/images/deep_learning_feature_eng_imagex2.png" style="padding: 0px 15px 0px 0px">
-</a>
+<img src="/assets/images/deep_learning_feature_eng_imagex2.png" style="padding: 0px 15px 0px 0px">
