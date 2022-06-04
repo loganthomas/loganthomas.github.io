@@ -15,6 +15,8 @@ Will implementing it bring immediate business value and create forever-increasin
 Or, is this some type of elusive marriage masked by marketing hype?
 Before even considering these questions, we need to take a step back and accurately define what deep learning is.
 
+[Read more here!](https://www.enthought.com/a-beginners-guide-to-deep-learning/){:target="_blank"}
+
 <a href="https://www.enthought.com/a-beginners-guide-to-deep-learning/">
-  <img src="/assets/images/deep_learning_feature_engx2.png" style="padding: 0px 15px 0px 0px">
+  <img src="/assets/images/deep_learning_feature_eng_imagex2.png" style="padding: 0px 15px 0px 0px">
 </a>
