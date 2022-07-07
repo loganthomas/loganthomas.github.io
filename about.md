@@ -13,3 +13,20 @@ I am passionate about software and love sharing my knowledge with others. This i
 If you're interested in discussing any of the topics listed on this site, looking for training/mentorship, or just want to catch up over a cup of coffee (in-person or remote), feel free to reach out to me at [logan.thomas005@gmail.com](mailto:logan.thomas005@gmail.com?subject=[Website Contact])
 
 To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
+<br/><br/>
+### Courses Taught To Date
+Total Courses: 24
+
+| Year   | Count   |
+| ------ | ------- |
+| 2021   | 13      |
+| 2022   | 11      |
+
+
+| Topic                                    | Count   |
+| ---------------------------------------- | ------- |
+| Python Fundamentals (`numpy` & `pandas`) | 7       |
+| Machine Learning (`sklearn`)             | 7       |
+| Deep Learning (`tensorflow` & `keras`)   | 7       |
+| Data analytics (`pandas`)                | 2       |
+| SciPy Tutorial (`numpy`)                 | 1       |
