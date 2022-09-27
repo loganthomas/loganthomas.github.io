@@ -12,3 +12,5 @@ When I first started my machine learning journey, [K-means clustering](https://e
 [Read more here!](https://www.enthought.com/blog/number-of-clusters/){:target="_blank"}
 
 <img src="/assets/animations/kmeans.gif" style="padding: 0px 15px 0px 0px">
+
+<p align="right"><small><i>Image developed by Logan Thomas (<a href="https://github.com/loganthomas" target="_blank">@loganthomas</a>)</i></small></p>
