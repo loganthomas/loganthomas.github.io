@@ -6,11 +6,12 @@ layout: page
 title: Turkey Bowl
 permalink: /turkey_bowl/
 ---
-# <center>Congratulations Dodd!</center>
+# <center>Congratulations Yeager!</center>
 # <center>:turkey: :trophy: You are the current Turkey Bowl Champions :trophy: :turkey:</center>
 
 | Year                               | Winner                         | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
+| [2022](/turkey_bowl/archive/2022/) | Yeager                         | 126.34         |
 | [2021](/turkey_bowl/archive/2021/) | Dodd                           | 129.2          |
 | [2020](/turkey_bowl/archive/2020/) | Yeager*                        | 123.0          |
 | [2019](/turkey_bowl/archive/2019/) | Cindy                          | 114.5          |
