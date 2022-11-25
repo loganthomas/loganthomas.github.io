@@ -15,18 +15,18 @@ If you're interested in discussing any of the topics listed on this site, lookin
 To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
 <br/><br/>
 ### Courses Taught To Date
-Total Courses: 24
+Total Courses: 29
 
 | Year   | Count   |
 | ------ | ------- |
 | 2021   | 13      |
-| 2022   | 11      |
+| 2022   | 16      |
 
 
 | Topic                                    | Count   |
 | ---------------------------------------- | ------- |
 | Python Fundamentals (`numpy` & `pandas`) | 7       |
-| Machine Learning (`sklearn`)             | 7       |
-| Deep Learning (`tensorflow` & `keras`)   | 7       |
+| Machine Learning (`sklearn`)             | 8       |
+| Deep Learning (`tensorflow` & `keras`)   | 10      |
 | Data analytics (`pandas`)                | 2       |
-| SciPy Tutorial (`numpy`)                 | 1       |
+| SciPy Tutorial (`numpy`)                 | 2       |

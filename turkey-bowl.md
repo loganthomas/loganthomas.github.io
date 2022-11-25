@@ -13,7 +13,7 @@ permalink: /turkey_bowl/
 | :--------------------------------- | :----------------------------- | :------------- |
 | [2022](/turkey_bowl/archive/2022/) | Yeager                         | 126.34         |
 | [2021](/turkey_bowl/archive/2021/) | Dodd                           | 129.2          |
-| [2020](/turkey_bowl/archive/2020/) | Yeager & Emily*                | 123.0          |
+| [2020](/turkey_bowl/archive/2020/) | Yeager*                        | 123.0          |
 | [2019](/turkey_bowl/archive/2019/) | Cindy                          | 114.5          |
 | [2018](/turkey_bowl/archive/2018/) | Dodd                           | 133.1          |
 | [2017](/turkey_bowl/archive/2017/) | Canceled due to lack of hustle | N/A            |
@@ -27,8 +27,7 @@ permalink: /turkey_bowl/
 | Participant | Wins |
 | :---------- | :--- |
 | Dodd        | 3    |
-| Yeager      | 3    |
-| Emily       | 1    |
+| Yeager      | 2    |
 | Cindy       | 1    |
 | Logan       | 0    |
 | Becca       | 0    |
