@@ -19,14 +19,15 @@ Total Courses: 29
 
 | Year   | Count   |
 | ------ | ------- |
-| 2021   | 13      |
-| 2022   | 16      |
+| 2022   | 20      |
+| 2021   | 14      |
 
 
 | Topic                                    | Count   |
 | ---------------------------------------- | ------- |
+| Deep Learning (`tensorflow` & `keras`)   | 11      |
+| Machine Learning (`sklearn`)             | 9       |
 | Python Fundamentals (`numpy` & `pandas`) | 7       |
-| Machine Learning (`sklearn`)             | 8       |
-| Deep Learning (`tensorflow` & `keras`)   | 10      |
+| Corporate Hackathon                      | 3       |
 | Data analytics (`pandas`)                | 2       |
 | SciPy Tutorial (`numpy`)                 | 2       |
