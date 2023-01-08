@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+# title: About
 permalink: /about/
 ---
 
@@ -8,8 +8,7 @@ permalink: /about/
 <h1 align="center">Logan Thomas</h1>
 <h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
-Hi, I'm Logan.
-
+<br/>
 I currently work for [Enthought](https://www.enthought.com/){:target="_blank"} as a Scientific Software Developer and Technical Trainer. Previously, I worked for a protective design firm as a machine learning engineer and I've also been employed as a data scientist in the digital media industry.
 
 I am passionate about software and love sharing my knowledge with others. This is my personal blog where I share helpful information about data science, machine learning, and python.
