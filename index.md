@@ -6,7 +6,6 @@ layout: page
 <h1 align="center">Logan Thomas</h1>
 <h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
-
 <br/>
 I currently work for [Enthought](https://www.enthought.com/){:target="_blank"} as a Scientific Software Developer and Technical Trainer. Previously, I worked for a protective design firm as a machine learning engineer and I've also been employed as a data scientist in the digital media industry.
 
@@ -16,7 +15,7 @@ If you're interested in discussing any of the topics listed on this site, lookin
 
 To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
 <br/><br/>
-### Courses Taught To Date
+<h3>Courses Taught To Date</h3>
 Total Courses: 34
 
 | Year   | Count   |
@@ -33,3 +32,21 @@ Total Courses: 34
 | Corporate Hackathon                      | 3       |
 | Data analytics (`pandas`)                | 2       |
 | SciPy Tutorial (`numpy`)                 | 2       |
+
+<h3>Recent Posts</h3>
+{%- if site.posts.size > 0 -%}
+<ul class="post-list">
+    {%- for post in site.posts limit:3-%}
+    <li>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}" style="font-size:20px">
+        {{ post.title | escape }}
+        </a>
+    {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+    {%- endif -%}
+    </li>
+    {%- endfor -%}
+</ul>
+{%- endif -%}
