@@ -11,26 +11,36 @@ layout: default
     {{ content }}
   </div>
 
+  <!-- 3 most recent blog posts (limit:n+1) -->
+  <h2>Recent Posts</h2>
   {%- if site.posts.size > 0 -%}
-    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Tutorials" }}</h2> -->
     <ul class="post-list">
-      {%- for post in site.posts -%}
-      {%- if post.layout == "post" -%}
+      {%- for post in site.posts limit:3-%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
+          <a class="post-link" href="{{ post.url | relative_url }}" style="font-size:20px">
             {{ post.title | escape }}
           </a>
-        </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
       </li>
-      {%- endif -%}
       {%- endfor -%}
     </ul>
   {%- endif -%}
+
+  <hr style="display: block; margin-left: auto; margin-right: auto; width:50%">
+  <br/>
+  <h2>Archived Posts</h2>
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+    <h4>{{ tag[0] }}</h4>
+    <ul>
+      {% for post in tag[1] %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 
 </article>
