@@ -1,8 +1,37 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: page
+title: About
+permalink: /about/
 ---
+
+<img src="/assets/images/profile_pic.jpg" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width:50%">
 <h1 align="center">Logan Thomas</h1>
 <h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
+
+Hi, I'm Logan.
+
+I currently work for [Enthought](https://www.enthought.com/){:target="_blank"} as a Scientific Software Developer and Technical Trainer. Previously, I worked for a protective design firm as a machine learning engineer and I've also been employed as a data scientist in the digital media industry.
+
+I am passionate about software and love sharing my knowledge with others. This is my personal blog where I share helpful information about data science, machine learning, and python.
+
+If you're interested in discussing any of the topics listed on this site, looking for training/mentorship, or just want to catch up over a cup of coffee (in-person or remote), feel free to reach out to me at [logan.thomas005@gmail.com](mailto:logan.thomas005@gmail.com?subject=[Website Contact])
+
+To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
+<br/><br/>
+### Courses Taught To Date
+Total Courses: 34
+
+| Year   | Count   |
+| ------ | ------- |
+| 2022   | 20      |
+| 2021   | 14      |
+
+
+| Topic                                    | Count   |
+| ---------------------------------------- | ------- |
+| Deep Learning (`tensorflow` & `keras`)   | 11      |
+| Machine Learning (`sklearn`)             | 9       |
+| Python Fundamentals (`numpy` & `pandas`) | 7       |
+| Corporate Hackathon                      | 3       |
+| Data analytics (`pandas`)                | 2       |
+| SciPy Tutorial (`numpy`)                 | 2       |
