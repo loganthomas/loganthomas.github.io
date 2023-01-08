@@ -2,10 +2,12 @@
   link: /about/
 - name: Blog
   link: /blog/
-- name: Tutorials
-  link: /tutorials/
+- name: Coffee & Code
+  link: /coffee_n_code/
 - name: Talks
   link: /talks/
+- name: Tutorials
+  link: /tutorials/
 # - name: Turkey Bowl
 #   link: /turkey_bowl/
 # - name: Tags
