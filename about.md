@@ -4,6 +4,10 @@ title: About
 permalink: /about/
 ---
 
+<img src="/assets/images/profile_pic.jpg" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width:50%">
+<h1 align="center">Logan Thomas</h1>
+<h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
+
 Hi, I'm Logan.
 
 I currently work for [Enthought](https://www.enthought.com/){:target="_blank"} as a Scientific Software Developer and Technical Trainer. Previously, I worked for a protective design firm as a machine learning engineer and I've also been employed as a data scientist in the digital media industry.
