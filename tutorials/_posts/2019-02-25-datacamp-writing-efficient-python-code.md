@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: tutorial
 tags: python
 ---
-### [Writing Efficient Python Code](https://learn.datacamp.com/courses/writing-efficient-python-code){:target="_blank"}
+### [Writing Efficient Python Code](https://www.datacamp.com/courses/writing-efficient-python-code){:target="_blank"}
 #### Course Syllabus
 1. Foundations for efficiencies
 2. Timing and profiling code
