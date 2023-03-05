@@ -8,4 +8,4 @@ Code snippets and video shorts for exploring the Python programming language -- 
 
 GitHub: [coffee-n-code](https://github.com/loganthomas/coffee-n-code)
 
-YouTube: [@coffee-n-code](https://www.youtube.com/@coffee_n_code)
+YouTube: [@coffee-n-code](https://www.youtube.com/@coffee-n-code)
