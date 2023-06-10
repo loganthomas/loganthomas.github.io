@@ -23,6 +23,6 @@ and the entire team at AI Time Journal for the recognition.
 
 Check out the full article [here!](https://www.aitimejournal.com/best-python-courses/44616/){:target="_blank"}
 
-<a href="https://www.blog.pythonlibrary.org" target="_blank">
+<a href="https://www.aitimejournal.com/best-python-courses/44616/" target="_blank">
   <img src="/assets/images/ai-times-journal-best-python-courses.png" style="padding: 0px 15px 0px 0px">
 </a>
