@@ -11,3 +11,5 @@ ChatGPT and the explosion of advanced Large Language Models (LLMs) are disruptin
 Enthought has been developing transformative Artificial Intelligence and Machine Learning solutions for scientific research for decades. As pioneers in scientific computing, we recognize the technological and strategic inflection point before us all.
 
 You are invited to join Michael Connell (Enthought's Chief Operating Officer), Robert Kern (Principal Engineer, Algorithms and Machine Learning), and Logan Thomas (Scientific Software Developer) as they deep dive into the relevance and implications of ChatGPT, LLMs, and generative AI for your research team and organization. [Register for the event](https://www.enthought.com/resource/webinar-what-every-rd-leader-needs-to-know-about-chatgpt-and-llms/){:target="_blank"} to obtain a recording of the webinar.
+
+<img src="/assets/images/enthought_logo.png" style="padding: 0px 15px 0px 0px">
