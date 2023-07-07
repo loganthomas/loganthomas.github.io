@@ -18,7 +18,7 @@ If you're interested in discussing any of the topics listed on this site, lookin
 To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
 <br/><br/>
 <h3>Courses Taught To Date</h3>
-Total Courses: 38
+Total Courses: 45f
 
 | Year   | Count   |
 | ------ | ------- |
