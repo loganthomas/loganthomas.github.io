@@ -25,15 +25,15 @@ Total Courses: 49
 | 2021   | 14      |
 
 
-| Topic                                              | Count   |
-| -------------------------------------------------- | ------- |
-| Deep Learning (`tensorflow` & `keras`)             | 14      |
-| Machine Learning (`sklearn`)                       | 12      |
-| Python Foundations (`numpy` & `pandas`)            | 11      |
-| Data Analytics (`pandas` & `xarray`)               | 6       |
-| Corporate Hackathon                                | 3       |
-| SciPy Tutorial (`numpy`)                           | 2       |
-| Software Engineering (`unnitest, `logging`, `git`) | 1       |
+| Topic                                               | Count   |
+| --------------------------------------------------- | ------- |
+| Deep Learning (`tensorflow` & `keras`)              | 14      |
+| Machine Learning (`sklearn`)                        | 12      |
+| Python Foundations (`numpy` & `pandas`)             | 11      |
+| Data Analytics (`pandas` & `xarray`)                | 6       |
+| Corporate Hackathon                                 | 3       |
+| SciPy Tutorial (`numpy`)                            | 2       |
+| Software Engineering (`unnitest`, `logging`, `git`) | 1       |
 
 <h3>Recent Posts</h3>
 {%- if site.posts.size > 0 -%}
