@@ -15,26 +15,28 @@ I am passionate about software and love sharing my knowledge with others. This i
 
 If you're interested in discussing any of the topics listed on this site, looking for training/mentorship, or just want to catch up over a cup of coffee (in-person or remote), feel free to reach out to me at [logan.thomas005@gmail.com](mailto:logan.thomas005@gmail.com?subject=[Website Contact])
 
-To see other things I'm working on, checkout my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
+To see other things I'm working on, check out my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
 <br/><br/>
 <h3>Courses Taught To Date</h3>
 Total Courses: 45
 
 | Year   | Count   |
 | ------ | ------- |
-| 2023   | 11      |
+| 2023   | 15      |
 | 2022   | 20      |
 | 2021   | 14      |
 
 
-| Topic                                    | Count   |
-| ---------------------------------------- | ------- |
-| Deep Learning (`tensorflow` & `keras`)   | 13      |
-| Machine Learning (`sklearn`)             | 12      |
-| Python Foundations (`numpy` & `pandas`)  | 11      |
-| Data Analytics (`pandas` & `xarray`)     | 4       |
-| Corporate Hackathon                      | 3       |
-| SciPy Tutorial (`numpy`)                 | 2       |
+| Topic                                              | Count   |
+| -------------------------------------------------- | ------- |
+| Deep Learning (`tensorflow` & `keras`)             | 14      |
+| Machine Learning (`sklearn`)                       | 12      |
+| Python Foundations (`numpy` & `pandas`)            | 11      |
+| Data Analytics (`pandas` & `xarray`)               | 6       |
+| Corporate Hackathon                                | 3       |
+| SciPy Tutorial (`numpy`)                           | 2       |
+| Software Engineering (`unnitest, `logging`, `git`) | 1       |
+
 
 <h3>Recent Posts</h3>
 {%- if site.posts.size > 0 -%}
