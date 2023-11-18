@@ -33,7 +33,7 @@ Total Courses: 59 Total Students: 659
 | Data Analytics (`pandas` & `xarray`)                | 8       |
 | Corporate Hackathon                                 | 4       |
 | SciPy Tutorial (`numpy`)                            | 2       |
-| Software Engineering (`unnitest`, `logging`, `git`) | 1       |
+| Software Engineering (`unnitest`, `logging`, `git`) | 2       |
 
 <h3>Recent Posts</h3>
 {%- if site.posts.size > 0 -%}
