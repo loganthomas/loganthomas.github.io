@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "PyTorch Recipe: Inspecting Model Parameters"
-date:   2024-06-12 08:00:00 -0500
+date:   2024-06-10 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: deep-learning pytorch
