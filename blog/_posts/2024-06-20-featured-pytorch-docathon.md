@@ -4,7 +4,7 @@ title:  "Featured: PyTorch H1 2024 PyTorch Docathon Award"
 date:   2024-06-20 08:00:00 -0500
 author: Logan Thomas
 categories: blog
-tags: python featured deep-learning
+tags: python featured deep-learning pytorch
 ---
 ### [PyTorch Docathon H2 2024 Wrap-up](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
 
