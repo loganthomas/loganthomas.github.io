@@ -30,7 +30,7 @@ Total Courses: 61 Total Students: 684
 
 | Topic                                               | Count   |
 | --------------------------------------------------- | ------- |
-| Deep Learning (`torch`, `tensorflow`, `keras`)      | 18      |
+| Deep Learning (`tensorflow`, `keras`, `torch`)      | 18      |
 | Machine Learning (`sklearn`)                        | 14      |
 | Python Foundations (`numpy` & `pandas`)             | 13      |
 | Data Analytics (`pandas` & `xarray`)                | 8       |
