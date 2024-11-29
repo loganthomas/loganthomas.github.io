@@ -6,11 +6,12 @@ layout: page
 title: Turkey Bowl
 permalink: /turkey_bowl/
 ---
-# <center>Congratulations Becca!</center>
+# <center>Congratulations Logan!</center>
 # <center>:turkey: :trophy: You are the current Turkey Bowl Champion :trophy: :turkey:</center>
 
 | Year                               | Winner                         | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
+| [2024](/turkey_bowl/archive/2024/) | Logan                          | 130.96         |
 | [2023](/turkey_bowl/archive/2023/) | Becca                          | 130.50         |
 | [2022](/turkey_bowl/archive/2022/) | Yeager                         | 126.34         |
 | [2021](/turkey_bowl/archive/2021/) | Dodd                           | 129.20         |
@@ -31,7 +32,7 @@ permalink: /turkey_bowl/
 | Yeager      | 3    |
 | Cindy       | 1    |
 | Becca       | 1    |
-| Logan       | 0    |
+| Logan       | 1    |
 
 
 [Archived Results](/turkey_bowl/archive/)
