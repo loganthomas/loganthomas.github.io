@@ -12,8 +12,8 @@ permalink: /about/
 I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}
 as a data science software engineer.
 Before Fullstory, I was employed by [Pattern Bioscience](https://pattern.bio/){:target="_blank"}
-as a member of the Software Team supporting efforts in Pathogen Identification and
-Antibiotic Susceptibility Testing.
+as a member of the software team supporting efforts in pathogen identification (ID) and
+antibiotic susceptibility testing (AST).
 I've also served as a scientific software developer and Python instructor for
 [Enthought](https://www.enthought.com/){:target="_blank"},
 worked for a protective design firm ([PEC](https://www.protection-consultants.com/){:target="_blank"})
