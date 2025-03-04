@@ -7,11 +7,25 @@ layout: page
 <h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
 <br/>
-I currently work for [Pattern Bioscience](https://pattern.bio/){:target="_blank"} as a data scientist. Before Pattern, I served as a scientific software developer and Python instructor for [Enthought](https://www.enthought.com/){:target="_blank"}, worked for a protective design firm ([PEC](https://www.protection-consultants.com/){:target="_blank"}) as a machine learning engineer, and was employed by [Nielsen](https://www.nielsen.com/){:target="_blank"} as a data scientist in the digital media industry.
+I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}
+as a data scientist and software engineer.
+Before Fullstory, I was employed by [Pattern Bioscience](https://pattern.bio/){:target="_blank"}
+as a member of the Software Team supporting efforts in Pathogen Identification and
+Antibiotic Susceptibility Testing.
+I've also served as a scientific software developer and Python instructor for
+[Enthought](https://www.enthought.com/){:target="_blank"},
+worked for a protective design firm ([PEC](https://www.protection-consultants.com/){:target="_blank"})
+as a machine learning engineer, and been employed by [Nielsen](https://www.nielsen.com/){:target="_blank"}
+as a data scientist in the digital media industry.
 
-I am passionate about software and love sharing my knowledge with others. This is my personal blog where I share helpful information about data science, machine learning, and Python.
+I am passionate about software and love sharing my knowledge with others.
+This is my personal blog where I share helpful information about data science,
+machine learning, and Python.
 
-If you're interested in discussing any of the topics listed on this site, looking for training/mentorship, or just want to catch up over a cup of coffee (in-person or remote), feel free to reach out to me at [logan@datacentriq.net](mailto:logan@datacentriq.net?subject=[Website Contact])
+If you're interested in discussing any of the topics listed on this site,
+looking for training/mentorship, or just want to catch up over a cup of coffee
+(in-person or remote), feel free to reach out to me at
+[logan@datacentriq.net](mailto:logan@datacentriq.net?subject=[Website Contact])
 
 To see other things I'm working on, check out my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
 <br/><br/>
