@@ -10,7 +10,7 @@ permalink: /about/
 
 <br/>
 I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}
-as a data scientist and software engineer.
+as a data science software engineer.
 Before Fullstory, I was employed by [Pattern Bioscience](https://pattern.bio/){:target="_blank"}
 as a member of the Software Team supporting efforts in Pathogen Identification and
 Antibiotic Susceptibility Testing.
