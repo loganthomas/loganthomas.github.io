@@ -11,9 +11,21 @@
         <script src="/mini-coi.js"></script>
     </head>
     <body>
-        <script type="py" terminal worker config='{"packages":["ipython", "numpy", "pandas"]}'>
-            import IPython
-            IPython.embed(header='Python REPL [numpy, pandas]', banner1='', banner2='')
+        <script id="py-terminal" type="py" terminal worker config='{"packages":["ipython", "numpy", "pandas", "traitlets"]}'>
+        from pyscript import ffi
+        __terminal__.options = ffi.to_js({'fontFamily': "'JetBrains Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace"})
+        import sys
+        from traitlets.config import Config
+        c = Config()
+        c.HistoryManager.enabled = False
+        c.InteractiveShellApp.exec_lines = [
+            "%doctest_mode"
+        ]
+        c.InteractiveShell.banner1 = 'Python REPL [numpy, pandas]'
+        c.InteractiveShell.banner2 = f'{sys.version}\n'
+        c.InteractiveShell.colors = "neutral"
+        import IPython
+        IPython.start_ipython(config=c)
         </script>
     </body>
 </html>
