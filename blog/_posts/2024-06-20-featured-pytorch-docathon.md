@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: python featured deep-learning pytorch
 ---
-### [PyTorch Docathon H2 2024 Wrap-up](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
+### [PyTorch Docathon H1 2024 Wrap-up](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
 
 I'm thrilled to share that I've secured second place in the recent PyTorch Docathon.
 It's been a pleasure contributing to the documentation alongside so many talented
@@ -20,5 +20,5 @@ Check out the final results blog [here!](https://pytorch.org/blog/pytorch-docath
 
 
 <a href="https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/" target="_blank">
-  <img src="/assets/images/pytorch-docathon-results.jpeg" style="padding: 0px 15px 0px 0px">
+  <img src="/assets/images/pytorch-docathon-results-2024.jpeg" style="padding: 0px 15px 0px 0px">
 </a>
