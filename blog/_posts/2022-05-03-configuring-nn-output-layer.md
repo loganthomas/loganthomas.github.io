@@ -24,4 +24,4 @@ The result is this blog post—which is one of my favorite [resources](https://w
 
 <img src="/assets/images/output-layer-nn.png" style="padding: 0px 15px 0px 0px">
 
-<p align="right"><small><i>Image developed by Erick Michaud (<a href="https://github.com/earache73" target="_blank">@earache73</a>)</i></small></p>
+<p style="text-align: right;"><small><i>Image developed by Erick Michaud (<a href="https://github.com/earache73" target="_blank">@earache73</a>)</i></small></p>
