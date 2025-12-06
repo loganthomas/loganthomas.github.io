@@ -7,7 +7,7 @@ title: Turkey Bowl
 permalink: /turkey-bowl/
 ---
 # <center>Congratulations Yeager!</center>
-# <center>:turkey: :trophy: You are the current Turkey Bowl Champion :trophy: :turkey:</center>
+# <center>🦃 :trophy: You are the current Turkey Bowl Champion :trophy: 🦃</center>
 
 | Year                               | Winner                         | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
