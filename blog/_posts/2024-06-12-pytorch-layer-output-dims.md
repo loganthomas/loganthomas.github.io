@@ -30,7 +30,7 @@ for finding out how to make this transition from convolutions to linear layers a
 ### Early Stages of Model Development
 Let's start by dropping into the scenario described in the overview.
 
-Assume we will train on images from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
+Assume we will train on images from the [MNIST dataset](https://yann.lecun.com/exdb/mnist/).
 That is, our data will comprise of images that are 28x28 pixels, have a single channel, and will be
 classified as a handwritten digit between 0-9 (10 possible options).
 
