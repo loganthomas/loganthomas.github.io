@@ -2,20 +2,15 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-2">
+    <div class="footer-content">
+      <span class="footer-title">{{ site.title | escape }}</span>
+      <span class="footer-separator">|</span>
+      <div class="footer-social">
         {%- include social.html -%}
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p style="font-size:18px; padding-left: 15px">{{- site.description | escape -}}</p>
-      </div>
-
+      <span class="footer-separator">|</span>
+      <span class="footer-description">{{- site.description | escape -}}</span>
     </div>
-
   </div>
 
 </footer>
