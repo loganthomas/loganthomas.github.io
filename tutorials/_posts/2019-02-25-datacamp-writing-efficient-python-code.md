@@ -1,5 +1,6 @@
 ---
-layout: tutorial
+layout: post
+type: tutorial
 title:  "DataCamp: Writing Efficient Python Code"
 date:   2019-02-25 08:00:00 -0500
 author: Logan Thomas

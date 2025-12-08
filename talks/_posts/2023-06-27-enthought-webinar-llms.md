@@ -1,5 +1,6 @@
 ---
-layout: talk
+layout: post
+type: talk
 title:  "Enthought Webinar: What Every R&D Leader Needs to Know About ChatGPT and LLMs"
 date:   2023-06-27 14:00:00 -0500
 tags: deep-learning machine-learning
