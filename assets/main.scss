@@ -1,0 +1,258 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.site-header {
+    border-top: none;
+    border-bottom: 1px solid $grey-color-light;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        max-width: 100%;
+        padding: 0.5rem 2rem;
+    }
+
+    .site-title {
+        display: flex;
+        align-items: center;
+        justify-self: start;
+    }
+
+    .site-nav {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        grid-column: 2;
+    }
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+// Mobile: hamburger menu
+@media screen and (max-width: 1000px) {
+    .site-header {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .site-nav {
+            position: absolute;
+            top: 9px;
+            right: 2rem;
+
+            .nav-trigger {
+                display: none;
+            }
+
+            label[for="nav-trigger"] {
+                display: block;
+                cursor: pointer;
+                z-index: 2;
+            }
+
+            .menu-icon {
+                display: block;
+                width: 36px;
+                height: 26px;
+                line-height: 0;
+                padding-top: 10px;
+            }
+
+            .trigger {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: white;
+                border: 1px solid $grey-color-light;
+                border-radius: 4px;
+                padding: 1rem 2rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                min-width: 150px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            input:checked ~ .trigger {
+                display: flex;
+            }
+        }
+    }
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.python-logo-nav {
+    display: block;
+}
+
+.logan-svg-icon {
+    display: inline-block;
+    fill: #828282;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+// Profile and content styles
+.profile-image {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.post-link-large {
+    font-size: 20px;
+}
+
+.section-divider {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+// Tag cloud styles
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag-pill {
+    text-decoration: none;
+
+    code {
+        white-space: nowrap;
+        background-color: $grey-color-light;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.9em;
+    }
+
+    &:hover code {
+        background-color: $grey-color;
+        color: white;
+    }
+}
+
+// Tag list styles (one per line)
+.tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        text-decoration: none;
+
+        code {
+            background-color: $grey-color-light;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.95em;
+        }
+
+        &:hover code {
+            background-color: $grey-color;
+            color: white;
+        }
+    }
+}
+
+// Archive scroll section
+.archive-scroll {
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid $grey-color-light;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    background-color: $background-color;
+    scroll-behavior: smooth;
+
+    // Custom scrollbar styling for webkit browsers
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: lighten($grey-color-light, 10%);
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $grey-color;
+        border-radius: 0.5rem;
+
+        &:hover {
+            background: $grey-color-dark;
+        }
+    }
+
+    // Firefox scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: $grey-color lighten($grey-color-light, 10%);
+}
+
+// Footer styles
+footer.site-footer {
+    color: $grey-color;
+
+    * {
+        color: $grey-color;
+    }
+
+    .wrapper .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+        font-size: 16px;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 0.15rem;
+        }
+    }
+
+    .footer-svg-icon {
+        fill: $grey-color;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+}
+
+// Mobile: adjust archive scroll for smaller screens
+@media screen and (max-width: 768px) {
+    .archive-scroll {
+        max-height: 400px;
+        padding: 1rem;
+    }
+}

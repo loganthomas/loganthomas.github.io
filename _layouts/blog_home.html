@@ -50,7 +50,7 @@ layout: default
   <hr class="section-divider">
   <br/>
 
-  <h2>Archive by Year</h2>
+  <h2>Browse by Year</h2>
   <div class="archive-scroll">
     {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
     {% for year_group in posts_by_year %}
