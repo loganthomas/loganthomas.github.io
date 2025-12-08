@@ -12,7 +12,6 @@ I'm a data science software engineer at [Fullstory](https://www.fullstory.com/){
 [Learn more about me →](/about/)
 
 <hr class="section-divider">
-<br/>
 
 <h3>Courses Taught To Date</h3>
 Total Courses: 62 Total Students: 694
@@ -37,7 +36,6 @@ Total Courses: 62 Total Students: 694
 | Software Engineering (`unittest`, `logging`, `git`) | 2       |
 
 <hr class="section-divider">
-<br/>
 
 <h3>Recent Posts</h3>
 {%- if site.posts.size > 0 -%}

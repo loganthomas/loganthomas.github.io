@@ -31,7 +31,7 @@ looking for training/mentorship, or just want to catch up over a cup of coffee
 
 To see other things I'm working on, check out my GitHub page [@loganthomas](https://github.com/loganthomas){:target="_blank"}
 
----
+<hr class="section-divider">
 
 **Education**
 - 🐊 University of Florida (2012-2014)
