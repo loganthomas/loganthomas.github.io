@@ -108,6 +108,39 @@
     width: 50%;
 }
 
+// Text alignment utilities
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// Blog post image with padding
+.post-image {
+    padding: 10px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+// Featured image styling (for blog posts with logos/thumbnails)
+.featured-image {
+    padding: 0 15px 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.featured-image-wide {
+    width: 200px;
+    padding: 0 15px 0 0;
+}
+
+// Inline icon alignment (for small icons in text)
+.inline-icon {
+    vertical-align: middle;
+}
+
 .post-link-large {
     font-size: 20px;
 }
@@ -218,5 +251,178 @@ footer.site-footer {
     .archive-scroll {
         max-height: 400px;
         padding: 1rem;
+    }
+}
+
+// 404 Page Styles
+.error-container {
+    margin: 10px auto;
+    max-width: 800px;
+    text-align: center;
+
+    h1 {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .ascii-art {
+        font-family: monospace;
+        font-size: 0.7em;
+        line-height: 1.2;
+        overflow-x: auto;
+        text-align: left;
+        display: inline-block;
+        margin: 0 auto 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .error-container .ascii-art {
+        font-size: 0.45em;
+    }
+}
+
+// REPL Page Styles (dark theme)
+// Applied when body has .repl-page-body class
+body.repl-page-body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+
+    .page-content {
+        background-color: #0d1117;
+        padding: 0;
+
+        .wrapper {
+            max-width: none;
+            padding: 0;
+        }
+    }
+
+    .site-header {
+        background-color: #161b22;
+        border-bottom-color: #30363d;
+    }
+
+    .site-title,
+    .site-title:visited {
+        color: #c9d1d9;
+    }
+
+    .site-nav .page-link {
+        color: #8b949e;
+    }
+
+    .site-nav .page-link:hover {
+        color: #c9d1d9;
+    }
+
+    .site-footer {
+        background-color: #161b22;
+        border-top-color: #30363d;
+    }
+
+    .footer-heading,
+    .footer-content,
+    .footer-title,
+    .footer-description {
+        color: #8b949e;
+    }
+}
+
+.repl-page {
+    width: 90%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 120px);
+    min-height: calc(100dvh - 120px);
+
+    h1 {
+        color: #c9d1d9;
+        font-size: 2rem;
+        margin: 0 0 0.25rem 0;
+        text-align: center;
+    }
+}
+
+.repl-subtitle {
+    text-align: center;
+    color: #8b949e;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.repl-container {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 1rem;
+    flex: 1;
+    min-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    py-terminal {
+        display: block;
+        margin: 0;
+        flex: 1;
+        min-height: 0;
+    }
+
+    py-terminal::before {
+        content: 'Loading Python environment...';
+        display: block;
+        padding: 1rem;
+        color: #8b949e;
+        font-style: italic;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #30363d;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #484f58;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .repl-page {
+        width: 100%;
+        padding: 0.5rem;
+        min-height: calc(100vh - 100px);
+        min-height: calc(100dvh - 100px);
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .repl-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .repl-container {
+        padding: 0.5rem;
+        min-height: 60vh;
+        border-radius: 4px;
     }
 }

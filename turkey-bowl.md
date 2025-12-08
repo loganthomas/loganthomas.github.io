@@ -1,13 +1,10 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
 title: Turkey Bowl
 permalink: /turkey-bowl/
 ---
-<h1 style="text-align: center;">Congratulations Yeager!</h1>
-<h1 style="text-align: center;">🦃 :trophy: You are the current Turkey Bowl Champion :trophy: 🦃</h1>
+<h1 class="text-center">Congratulations Yeager!</h1>
+<h1 class="text-center">🦃 :trophy: You are the current Turkey Bowl Champion :trophy: 🦃</h1>
 
 | Year                               | Winner                         | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |

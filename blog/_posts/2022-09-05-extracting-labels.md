@@ -15,6 +15,6 @@ In this post, I’ll answer these types of questions and more by showing how to 
 
 [Read more here!](https://www.enthought.com/blog/deep-learning-extracting/){:target="_blank"}
 
-<img src="/assets/images/extracting-target-labels.png" style="padding: 0px 15px 0px 0px">
+<img src="/assets/images/extracting-target-labels.png" class="featured-image">
 
-<p style="text-align: right;"><small><i>Image developed by Erick Michaud (<a href="https://github.com/earache73" target="_blank">@earache73</a>)</i></small></p>
+<p class="text-right"><small><i>Image developed by Erick Michaud (<a href="https://github.com/earache73" target="_blank">@earache73</a>)</i></small></p>

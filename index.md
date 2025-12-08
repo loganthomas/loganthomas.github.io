@@ -2,9 +2,9 @@
 layout: page
 ---
 
-<img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width:50%">
-<h1 style="text-align: center;">Logan Thomas</h1>
-<h3 style="text-align: center;">Software Developer | Technical Trainer | Python Enthusiast</h3>
+<img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" class="profile-image">
+<h1 class="text-center">Logan Thomas</h1>
+<h3 class="text-center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
 <br/>
 I'm a data science software engineer at [Fullstory](https://www.fullstory.com/){:target="_blank"}, passionate about building software and sharing knowledge. This site showcases my history of teaching, talks and tutorials given, and a blog to share recent open source contributions or other personal software musings.

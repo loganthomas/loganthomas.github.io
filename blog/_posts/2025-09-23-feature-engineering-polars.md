@@ -14,4 +14,4 @@ While Python offers several frameworks for data processing ([pandas](https://pan
 
 [Read more here!](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
 
-<img src="/assets/images/feature-engineering-polars.png" style="padding: 0px 15px 0px 0px">
+<img src="/assets/images/feature-engineering-polars.png" class="featured-image">

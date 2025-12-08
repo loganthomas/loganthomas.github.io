@@ -53,15 +53,15 @@ utt balance --daily-hrs 4 --weekly-hrs 20
 
 **Under target** (time remaining in your budget):
 
-<img src="/assets/images/under-target-example.webp" style="padding: 10px 0px">
+<img src="/assets/images/under-target-example.webp" class="post-image">
 
 **At target** (you've hit your limit):
 
-<img src="/assets/images/at-target-example.webp" style="padding: 10px 0px">
+<img src="/assets/images/at-target-example.webp" class="post-image">
 
 **Over target** (you've exceeded your budget):
 
-<img src="/assets/images/over-target-example.webp" style="padding: 10px 0px">
+<img src="/assets/images/over-target-example.webp" class="post-image">
 
 ## utt-project-summary
 

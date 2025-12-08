@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-<img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width:50%">
-<h1 style="text-align: center;">Logan Thomas</h1>
-<h3 style="text-align: center;">Software Developer | Technical Trainer | Python Enthusiast</h3>
+<img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" class="profile-image">
+<h1 class="text-center">Logan Thomas</h1>
+<h3 class="text-center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
 <br/>
 I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}
@@ -43,12 +43,12 @@ To see other things I'm working on, check out my GitHub page [@loganthomas](http
   - Graduated Summa Cum Laude
 
 **Open Source Involvement**
-- <img src="https://raw.githubusercontent.com/scipy/scipy.org/main/static/images/logo.svg" alt="SciPy" width="20" height="20" style="vertical-align: middle;"> Tutorials Co-Chair, SciPy Conference (2022-2024)
-- <img src="https://pytexas.org/assets/images/logo.png" alt="PyTexas" width="20" height="20" style="vertical-align: middle;"> Committee Member, PyTexas Foundation
+- <img src="https://raw.githubusercontent.com/scipy/scipy.org/main/static/images/logo.svg" alt="SciPy" width="20" height="20" class="inline-icon"> Tutorials Co-Chair, SciPy Conference (2022-2024)
+- <img src="https://pytexas.org/assets/images/logo.png" alt="PyTexas" width="20" height="20" class="inline-icon"> Committee Member, PyTexas Foundation
 
 **Awards & Recognition**
-- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" style="vertical-align: middle;"> Second place, [PyTorch Docathon H1 2025](https://pytorch.org/blog/pytorch-docathon-2025-wrap-up/){:target="_blank"}
-- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" style="vertical-align: middle;"> Second place, [PyTorch Docathon H1 2024](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
+- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" class="inline-icon"> Second place, [PyTorch Docathon H1 2025](https://pytorch.org/blog/pytorch-docathon-2025-wrap-up/){:target="_blank"}
+- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" class="inline-icon"> Second place, [PyTorch Docathon H1 2024](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
 
 **Patents**
 - [Methods and Apparatus to Generate Audience Metrics Using Third-Party Privacy-Protected Cloud Environments](https://patents.google.com/patent/US12100016){:target="_blank"} (US 12100016, 2024)
