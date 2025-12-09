@@ -572,6 +572,24 @@ footer.site-footer {
         height: 20px;
         vertical-align: middle;
     }
+
+    // Social icons group (keeps icons together when stacked)
+    .footer-social-icons {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+// Small mobile: stack footer into 3 lines
+@media screen and (max-width: 600px) {
+    footer.site-footer .wrapper .footer-content {
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .footer-separator {
+            display: none;
+        }
+    }
 }
 
 // Mobile: adjust archive scroll for smaller screens
