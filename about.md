@@ -43,12 +43,12 @@ To see other things I'm working on, check out my GitHub page [@loganthomas](http
   - Graduated Summa Cum Laude
 
 **Open Source Involvement**
-- <img src="https://raw.githubusercontent.com/scipy/scipy.org/main/static/images/logo.svg" alt="SciPy" width="20" height="20" class="inline-icon" loading="lazy"> Tutorials Co-Chair, SciPy Conference (2022-2024)
-- <img src="https://pytexas.org/assets/images/logo.png" alt="PyTexas" width="20" height="20" class="inline-icon" loading="lazy"> Committee Member, PyTexas Foundation
+- <img src="/assets/images/icons/scipy-logo.svg" alt="SciPy" width="20" height="20" class="inline-icon" loading="lazy"> Tutorials Co-Chair, SciPy Conference (2022-2024)
+- <img src="/assets/images/icons/pytexas-logo.png" alt="PyTexas" width="20" height="20" class="inline-icon" loading="lazy"> Committee Member, PyTexas Foundation
 
 **Awards & Recognition**
-- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" class="inline-icon" loading="lazy"> Second place, [PyTorch Docathon H1 2025](https://pytorch.org/blog/pytorch-docathon-2025-wrap-up/){:target="_blank"}
-- <img src="https://www.svgrepo.com/show/354240/pytorch.svg" alt="PyTorch" width="20" height="20" class="inline-icon" loading="lazy"> Second place, [PyTorch Docathon H1 2024](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
+- <img src="/assets/images/icons/pytorch-logo.svg" alt="PyTorch" width="20" height="20" class="inline-icon" loading="lazy"> Second place, [PyTorch Docathon H1 2025](https://pytorch.org/blog/pytorch-docathon-2025-wrap-up/){:target="_blank"}
+- <img src="/assets/images/icons/pytorch-logo.svg" alt="PyTorch" width="20" height="20" class="inline-icon" loading="lazy"> Second place, [PyTorch Docathon H1 2024](https://pytorch.org/blog/pytorch-docathon-h2-2024-wrap-up/){:target="_blank"}
 
 **Patents**
 - [Methods and Apparatus to Generate Audience Metrics Using Third-Party Privacy-Protected Cloud Environments](https://patents.google.com/patent/US12100016){:target="_blank"} (US 12100016, 2024)

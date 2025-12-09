@@ -184,6 +184,11 @@ $on-palm: 1000px;
     }
 }
 
+// Post tags (inline tags shown on blog posts)
+.post-tags .highlighter-rouge {
+    white-space: nowrap;
+}
+
 // Tag list styles (one per line)
 .tag-list {
     list-style: none;

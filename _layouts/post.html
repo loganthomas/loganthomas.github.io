@@ -11,12 +11,12 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        • <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
-      <span>[
+      <span class="post-tags">[
         {% for tag in page.tags %}
           {% capture tag_name %}{{ tag }}{% endcapture %}
-          <a href="/tags/{{ tag_name }}"><code class="highlighter-rouge" style="white-space: nowrap;">{{ tag_name }}</code>&nbsp;</a>
+          <a href="/tags/{{ tag_name }}"><code class="highlighter-rouge">{{ tag_name }}</code>&nbsp;</a>
         {% endfor %}
       ]</span>
   </header>
