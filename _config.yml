@@ -36,6 +36,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jemoji
+  - jekyll-sitemap
 
 # Show post excerpts on listing pages
 show_excerpts: false

@@ -20,5 +20,5 @@ For more details, check out the [wrap up blog post](https://pytorch.org/blog/pyt
 
 
 <a href="https://pytorch.org/blog/pytorch-docathon-2025-wrap-up/" target="_blank">
-  <img src="/assets/images/pytorch-docathon-results-2025.jpeg" class="featured-image">
+  <img src="/assets/images/pytorch-docathon-results-2025.jpeg" alt="PyTorch Docathon H1 2025 results" class="featured-image" loading="lazy">
 </a>

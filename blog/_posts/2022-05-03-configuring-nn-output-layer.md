@@ -22,6 +22,6 @@ The result is this blog post—which is one of my favorite [resources](https://w
 
 [Read more here!](https://www.enthought.com/blog/neural-network-output-layer/){:target="_blank"}
 
-<img src="/assets/images/output-layer-nn.png" class="featured-image">
+<img src="/assets/images/output-layer-nn.png" alt="Neural network output layer configuration diagram" class="featured-image" loading="lazy">
 
 <p class="text-right"><small><i>Image developed by Erick Michaud (<a href="https://github.com/earache73" target="_blank">@earache73</a>)</i></small></p>

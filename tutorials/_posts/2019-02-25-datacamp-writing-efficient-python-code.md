@@ -14,5 +14,5 @@ tags: python
 3. Gaining efficiencies
 4. Basic pandas optimizations
 
-<img src="/assets/images/shield_image.png" class="featured-image">
-<img src="/assets/images/datacamp_logo.jpg" height="200">
+<img src="/assets/images/shield_image.png" alt="DataCamp course shield" class="featured-image" loading="lazy">
+<img src="/assets/images/datacamp_logo.jpg" alt="DataCamp logo" height="200" loading="lazy">
