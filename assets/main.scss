@@ -75,32 +75,6 @@ body {
     fill: var(--text-color);
   }
 
-  // Mobile header actions container
-  @media screen and (max-width: 1000px) {
-    .site-header .site-nav {
-      background-color: var(--header-bg);
-      border-color: var(--border-color);
-    }
-
-    .site-header .site-nav .trigger {
-      background-color: var(--header-bg);
-      border-color: var(--border-color);
-
-      .page-link {
-        color: var(--text-color-light);
-
-        &:hover {
-          color: var(--text-color);
-        }
-      }
-    }
-
-    .site-header .theme-toggle {
-      background-color: var(--header-bg);
-      border-color: var(--border-color);
-    }
-  }
-
   // Main content area
   .page-content {
     background-color: var(--bg-color);
@@ -301,8 +275,8 @@ body {
 
         .site-nav {
             position: static;
-            background-color: #fdfdfd;
-            border: 1px solid #e8e8e8;
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             display: flex;
             align-items: center;
@@ -339,8 +313,8 @@ body {
                 top: 100%;
                 right: 0;
                 margin-top: 5px;
-                background-color: #fdfdfd;
-                border: 1px solid #e8e8e8;
+                background-color: var(--header-bg);
+                border: 1px solid var(--border-color);
                 border-radius: 5px;
                 min-width: 150px;
             }
@@ -358,8 +332,8 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #fdfdfd;
-            border: 1px solid #e8e8e8;
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             margin-left: 0;
             justify-self: auto;
@@ -644,6 +618,11 @@ body.repl-page-body {
     background-color: #0d1117;
     color: #c9d1d9;
 
+    // Hide theme toggle since REPL is always dark
+    .theme-toggle {
+        display: none;
+    }
+
     .page-content {
         background-color: #0d1117;
         padding: 0;
@@ -706,7 +685,6 @@ body.repl-page-body {
         border-top-color: #30363d;
     }
 
-    .footer-heading,
     .footer-content,
     .footer-title,
     .footer-description {
