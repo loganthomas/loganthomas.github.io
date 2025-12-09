@@ -6,16 +6,245 @@ $on-palm: 1000px;
 
 @import "{{ site.theme }}";
 
+// =============================================================================
+// Dark Mode CSS Custom Properties
+// =============================================================================
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #111;
+  --text-color-light: #828282;
+  --link-color: #2a7ae2;
+  --link-hover-color: #1756a9;
+  --border-color: #e8e8e8;
+  --code-bg: #eef;
+  --header-bg: #fdfdfd;
+  --tag-bg: #eef2ff;
+  --tag-border: #c7d2fe;
+  --tag-hover-bg: #ddd6fe;
+  --tag-hover-border: #a5b4fc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --text-color-light: #8b949e;
+  --link-color: #58a6ff;
+  --link-hover-color: #79b8ff;
+  --border-color: #30363d;
+  --code-bg: #161b22;
+  --header-bg: #161b22;
+  --tag-bg: #21262d;
+  --tag-border: #30363d;
+  --tag-hover-bg: #30363d;
+  --tag-hover-border: #484f58;
+}
+
+// Apply dark mode styles
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Dark mode overrides for common elements
+[data-theme="dark"] {
+  .site-header {
+    background-color: var(--header-bg);
+    border-bottom-color: var(--border-color);
+  }
+
+  .site-title,
+  .site-title:visited {
+    color: var(--text-color);
+  }
+
+  .site-nav .page-link {
+    color: var(--text-color-light);
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  // Hamburger menu icon
+  .site-nav .menu-icon > svg path {
+    fill: var(--text-color-light);
+  }
+
+  .site-nav label[for="nav-trigger"]:hover .menu-icon > svg path {
+    fill: var(--text-color);
+  }
+
+  // Mobile header actions container
+  @media screen and (max-width: 1000px) {
+    .site-header .site-nav {
+      background-color: var(--header-bg);
+      border-color: var(--border-color);
+    }
+
+    .site-header .site-nav .trigger {
+      background-color: var(--header-bg);
+      border-color: var(--border-color);
+
+      .page-link {
+        color: var(--text-color-light);
+
+        &:hover {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    .site-header .theme-toggle {
+      background-color: var(--header-bg);
+      border-color: var(--border-color);
+    }
+  }
+
+  // Main content area
+  .page-content {
+    background-color: var(--bg-color);
+  }
+
+  // Links
+  a {
+    color: var(--link-color);
+
+    &:visited {
+      color: darken(#58a6ff, 10%);
+    }
+
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+
+  // Post title and headers
+  .post-title,
+  .post-link,
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+  }
+
+  .post-meta {
+    color: var(--text-color-light);
+  }
+
+  // Code blocks
+  pre,
+  code {
+    background-color: var(--code-bg);
+    border-color: var(--border-color);
+  }
+
+  .highlighter-rouge .highlight {
+    background-color: var(--code-bg);
+  }
+
+  // Tables
+  table {
+    border-color: var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    th {
+      background-color: #21262d;
+      color: var(--text-color);
+      border-color: var(--border-color);
+      font-weight: 600;
+    }
+
+    td {
+      border-color: var(--border-color);
+      color: var(--text-color);
+    }
+
+    tr {
+      background-color: var(--bg-color);
+    }
+
+    tr:nth-child(even) {
+      background-color: #161b22;
+    }
+
+    // Ensure links in tables are visible
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    color: var(--text-color-light);
+    border-left-color: var(--border-color);
+  }
+
+  // Footer
+  .site-footer {
+    background-color: var(--header-bg);
+    border-top-color: var(--border-color);
+    color: var(--text-color-light);
+
+    * {
+      color: var(--text-color-light);
+    }
+
+    .footer-svg-icon {
+      fill: var(--text-color-light);
+    }
+  }
+
+  // Archive scroll
+  .archive-scroll {
+    border-color: var(--border-color);
+    background-color: var(--code-bg);
+
+    &::-webkit-scrollbar-track {
+      background: var(--code-bg);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--text-color-light);
+    }
+  }
+
+  // Tag styles
+  .tag-list a code,
+  .post-tags .highlighter-rouge {
+    background-color: var(--tag-bg);
+    border-color: var(--tag-border);
+    color: var(--text-color);
+  }
+
+  .tag-list a:hover code {
+    background-color: var(--tag-hover-bg);
+    border-color: var(--tag-hover-border);
+  }
+
+  // Horizontal rules
+  hr {
+    border-color: var(--border-color);
+  }
+}
+
 .site-header {
     border-top: none;
     border-bottom: 1px solid $grey-color-light;
 
-    .wrapper {
+    // Override Minima's wrapper constraints
+    > .wrapper {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: 1fr auto 1fr;
         align-items: center;
-        max-width: 100%;
+        max-width: none !important;
+        width: 100% !important;
         padding: 0.5rem 2rem;
+        box-sizing: border-box;
+        margin: 0;
     }
 
     .site-title {
@@ -24,11 +253,20 @@ $on-palm: 1000px;
         justify-self: start;
     }
 
+    // Header actions contains nav + theme toggle
+    .header-actions {
+        display: contents; // Let children participate in parent grid
+    }
+
     .site-nav {
         display: flex;
         align-items: center;
         justify-self: center;
-        grid-column: 2;
+    }
+
+    // Theme toggle right-aligned
+    .theme-toggle {
+        justify-self: end;
     }
 }
 
@@ -41,36 +279,48 @@ $on-palm: 1000px;
 // Mobile: hamburger menu
 @media screen and (max-width: 1000px) {
     .site-header {
-        .wrapper {
+        > .wrapper {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            max-width: none !important;
+            width: 100% !important;
+            margin: 0;
+        }
+
+        // Container for hamburger + theme toggle on mobile - override display: contents
+        .header-actions {
+            display: flex !important;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            margin-left: auto;
         }
 
         .site-nav {
-            position: absolute;
-            top: 9px;
-            right: 15px;
+            position: static;
             background-color: #fdfdfd;
             border: 1px solid #e8e8e8;
             border-radius: 5px;
-            text-align: right;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
+            order: 1; // Hamburger first (left)
+            justify-self: auto;
 
             .nav-trigger {
                 display: none;
             }
 
             label[for="nav-trigger"] {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 cursor: pointer;
                 z-index: 2;
                 width: 36px;
                 height: 36px;
-                line-height: 36px;
-                text-align: center;
-                order: -1; // Always first (at top)
             }
 
             .menu-icon {
@@ -84,12 +334,35 @@ $on-palm: 1000px;
                 align-items: flex-end;
                 text-align: right;
                 gap: 0;
-                padding: 0.25rem 0.5rem;
+                padding: 0.5rem;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                margin-top: 5px;
+                background-color: #fdfdfd;
+                border: 1px solid #e8e8e8;
+                border-radius: 5px;
+                min-width: 150px;
             }
 
             input:checked ~ .trigger {
                 display: flex;
             }
+        }
+
+        // Theme toggle styling on mobile - separate box on right
+        .theme-toggle {
+            order: 2; // Toggle second (right)
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fdfdfd;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            margin-left: 0;
+            justify-self: auto;
         }
     }
 }
@@ -250,6 +523,49 @@ $on-palm: 1000px;
     // Firefox scrollbar styling
     scrollbar-width: thin;
     scrollbar-color: $grey-color lighten($grey-color-light, 10%);
+}
+
+// Dark mode toggle button
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--text-color);
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  // Hide moon by default (light mode shows sun)
+  .moon-icon {
+    display: none;
+  }
+
+  .sun-icon {
+    display: block;
+  }
+}
+
+// In dark mode, show moon and hide sun
+[data-theme="dark"] .theme-toggle {
+  .moon-icon {
+    display: block;
+  }
+
+  .sun-icon {
+    display: none;
+  }
 }
 
 // Footer styles
