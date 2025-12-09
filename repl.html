@@ -13,7 +13,18 @@ permalink: /repl/
       href="https://pyscript.net/releases/2025.11.1/core.css"
       integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q"
       crossorigin="anonymous">
-<!-- Cross-Origin Isolation helper for SharedArrayBuffer support -->
+<!--
+  mini-coi.js: Cross-Origin Isolation Service Worker
+
+  PyScript uses SharedArrayBuffer for multi-threading, which requires Cross-Origin
+  Isolation (COOP/COEP headers). GitHub Pages doesn't allow custom headers, so this
+  service worker adds them client-side:
+  - Cross-Origin-Opener-Policy: same-origin
+  - Cross-Origin-Embedder-Policy: require-corp
+
+  Without this, PyScript would fall back to single-threaded mode.
+  Source: https://github.com/niccokunzmann/mini-coi
+-->
 <script src="/mini-coi.js"></script>
 
 <div class="repl-page">
