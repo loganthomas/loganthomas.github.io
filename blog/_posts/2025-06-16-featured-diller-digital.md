@@ -12,5 +12,5 @@ This month we are featuring our knowledgeable instructor, [Logan Thomas](https:/
 <br/>
 
 <a href="https://dillerdigital.com/" target="_blank">
-  <img src="/assets/images/diller-digital.png" style="width: 200px;padding: 0px 15px 0px 0px">
+  <img src="/assets/images/diller-digital.png" alt="Diller Digital logo" class="featured-image-wide" loading="lazy">
 </a>

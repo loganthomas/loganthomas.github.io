@@ -14,4 +14,4 @@ The article demonstrates a modular approach to handling complex user interaction
 
 [Read more here!](https://www.fullstory.com/blog/dbt-labeling-nested-json-for-ml/){:target="_blank"}
 
-<img src="/assets/images/dbt-labeling-nested-json.png" style="padding: 0px 15px 0px 0px">
+<img src="/assets/images/dbt-labeling-nested-json.png" alt="dbt labeling nested JSON for ML diagram" class="featured-image" loading="lazy">

@@ -1,31 +1,80 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PyScript Terminal</title>
-        <script type="module" src="https://pyscript.net/releases/2025.5.1/core.js"></script>
-        <link rel="stylesheet" href="https://pyscript.net/releases/2025.5.1/core.css">
-        <!-- see https://docs.pyscript.net/2025.5.1/user-guide/workers/ -->
-        <!-- see https://github.com/pyscript/pyscript/issues/2299-->
-        <script src="/mini-coi.js"></script>
-    </head>
-    <body>
-        <script id="py-terminal" type="py" terminal worker config='{"packages":["ipython", "numpy", "pandas", "traitlets"]}'>
-        from pyscript import ffi
-        __terminal__.options = ffi.to_js({'fontFamily': "'JetBrains Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace"})
-        import sys
-        from traitlets.config import Config
-        c = Config()
-        c.HistoryManager.enabled = False
-        c.InteractiveShellApp.exec_lines = [
-            "%doctest_mode"
-        ]
-        c.InteractiveShell.banner1 = 'Python REPL [numpy, pandas]'
-        c.InteractiveShell.banner2 = f'{sys.version}\n'
-        c.InteractiveShell.colors = "neutral"
-        import IPython
-        IPython.start_ipython(config=c)
-        </script>
-    </body>
-</html>
+---
+layout: default
+title: Python REPL
+permalink: /repl/
+---
+
+<script>document.body.classList.add('repl-page-body');</script>
+<script type="module"
+        src="https://pyscript.net/releases/2025.11.1/core.js"
+        integrity="sha384-NPt4m1xXIfnCzPSm2qAaMebO2M/GsTSGsqQV/Rwu0R9F5CSFIjYLQbxewqKvLr6p"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://pyscript.net/releases/2025.11.1/core.css"
+      integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q"
+      crossorigin="anonymous">
+<!--
+  mini-coi.js: Cross-Origin Isolation Service Worker
+
+  PyScript uses SharedArrayBuffer for multi-threading, which requires Cross-Origin
+  Isolation (COOP/COEP headers). GitHub Pages doesn't allow custom headers, so this
+  service worker adds them client-side:
+  - Cross-Origin-Opener-Policy: same-origin
+  - Cross-Origin-Embedder-Policy: require-corp
+
+  Without this, PyScript would fall back to single-threaded mode.
+  Source: https://github.com/niccokunzmann/mini-coi
+-->
+<script src="/mini-coi.js"></script>
+
+<div class="repl-page">
+  <h1>Python REPL</h1>
+  <p class="repl-subtitle">Interactive Python environment powered by PyScript</p>
+
+  <div class="repl-container">
+    <script id="py-terminal" type="py" terminal worker config='{"packages":["ipython", "numpy", "pandas", "matplotlib", "traitlets"]}'>
+from pyscript import ffi
+
+# Configure terminal appearance with dark theme
+__terminal__.options = ffi.to_js({
+    'fontFamily': "'JetBrains Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    'fontSize': 14,
+    'theme': {
+        'background': '#1e1e1e',
+        'foreground': '#d4d4d4',
+        'cursor': '#d4d4d4',
+        'black': '#000000',
+        'red': '#cd3131',
+        'green': '#0dbc79',
+        'yellow': '#e5e510',
+        'blue': '#2472c8',
+        'magenta': '#bc3fbc',
+        'cyan': '#11a8cd',
+        'white': '#e5e5e5',
+        'brightBlack': '#666666',
+        'brightRed': '#f14c4c',
+        'brightGreen': '#23d18b',
+        'brightYellow': '#f5f543',
+        'brightBlue': '#3b8eea',
+        'brightMagenta': '#d670d6',
+        'brightCyan': '#29b8db',
+        'brightWhite': '#e5e5e5'
+    }
+})
+
+import sys
+from traitlets.config import Config
+
+# Configure IPython
+c = Config()
+c.HistoryManager.enabled = False
+c.InteractiveShellApp.exec_lines = ["%doctest_mode"]
+c.InteractiveShell.banner1 = 'Python REPL [numpy, pandas, matplotlib]'
+c.InteractiveShell.banner2 = f'{sys.version}\n'
+c.TerminalInteractiveShell.colors = "linux"
+
+import IPython
+IPython.start_ipython(config=c)
+    </script>
+  </div>
+</div>

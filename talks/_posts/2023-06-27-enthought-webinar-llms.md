@@ -1,5 +1,6 @@
 ---
-layout: talk
+layout: post
+type: talk
 title:  "Enthought Webinar: What Every R&D Leader Needs to Know About ChatGPT and LLMs"
 date:   2023-06-27 14:00:00 -0500
 tags: deep-learning machine-learning
@@ -12,4 +13,4 @@ Enthought has been developing transformative Artificial Intelligence and Machine
 
 You are invited to join Michael Connell (Enthought's Chief Operating Officer), Robert Kern (Principal Engineer, Algorithms and Machine Learning), and Logan Thomas (Scientific Software Developer) as they deep dive into the relevance and implications of ChatGPT, LLMs, and generative AI for your research team and organization. [Register for the event](https://www.enthought.com/resource/webinar-what-every-rd-leader-needs-to-know-about-chatgpt-and-llms/){:target="_blank"} to obtain a recording of the webinar.
 
-<img src="/assets/images/enthought_logo.png" style="padding: 0px 15px 0px 0px">
+<img src="/assets/images/enthought_logo.png" alt="Enthought logo" class="featured-image" loading="lazy">

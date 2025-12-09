@@ -1,0 +1,789 @@
+---
+---
+
+// Override Minima's default breakpoint (600px) to match our custom 1000px
+$on-palm: 1000px;
+
+@import "{{ site.theme }}";
+
+// =============================================================================
+// Dark Mode CSS Custom Properties
+// =============================================================================
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #111;
+  --text-color-light: #828282;
+  --link-color: #2a7ae2;
+  --link-hover-color: #1756a9;
+  --border-color: #e8e8e8;
+  --code-bg: #eef;
+  --header-bg: #fdfdfd;
+  --tag-bg: #eef2ff;
+  --tag-border: #c7d2fe;
+  --tag-hover-bg: #ddd6fe;
+  --tag-hover-border: #a5b4fc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --text-color-light: #8b949e;
+  --link-color: #58a6ff;
+  --link-hover-color: #79b8ff;
+  --border-color: #30363d;
+  --code-bg: #161b22;
+  --header-bg: #161b22;
+  --tag-bg: #21262d;
+  --tag-border: #30363d;
+  --tag-hover-bg: #30363d;
+  --tag-hover-border: #484f58;
+}
+
+// Apply dark mode styles
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Dark mode overrides for common elements
+[data-theme="dark"] {
+  .site-header {
+    background-color: var(--header-bg);
+    border-bottom-color: var(--border-color);
+  }
+
+  .site-title,
+  .site-title:visited {
+    color: var(--text-color);
+  }
+
+  .site-nav .page-link {
+    color: var(--text-color-light);
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  // Hamburger menu icon
+  .site-nav .menu-icon > svg path {
+    fill: var(--text-color-light);
+  }
+
+  .site-nav label[for="nav-trigger"]:hover .menu-icon > svg path {
+    fill: var(--text-color);
+  }
+
+  // Main content area
+  .page-content {
+    background-color: var(--bg-color);
+  }
+
+  // Links
+  a {
+    color: var(--link-color);
+
+    &:visited {
+      color: darken(#58a6ff, 10%);
+    }
+
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+
+  // Post title and headers
+  .post-title,
+  .post-link,
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+  }
+
+  .post-meta {
+    color: var(--text-color-light);
+  }
+
+  // Code blocks
+  pre,
+  code {
+    background-color: var(--code-bg);
+    border-color: var(--border-color);
+  }
+
+  .highlighter-rouge .highlight {
+    background-color: var(--code-bg);
+  }
+
+  // Tables
+  table {
+    border-color: var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    th {
+      background-color: #21262d;
+      color: var(--text-color);
+      border-color: var(--border-color);
+      font-weight: 600;
+    }
+
+    td {
+      border-color: var(--border-color);
+      color: var(--text-color);
+    }
+
+    tr {
+      background-color: var(--bg-color);
+    }
+
+    tr:nth-child(even) {
+      background-color: #161b22;
+    }
+
+    // Ensure links in tables are visible
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    color: var(--text-color-light);
+    border-left-color: var(--border-color);
+  }
+
+  // Footer
+  .site-footer {
+    background-color: var(--header-bg);
+    border-top-color: var(--border-color);
+    color: var(--text-color-light);
+
+    * {
+      color: var(--text-color-light);
+    }
+
+    .footer-svg-icon {
+      fill: var(--text-color-light);
+    }
+  }
+
+  // Archive scroll
+  .archive-scroll {
+    border-color: var(--border-color);
+    background-color: var(--code-bg);
+
+    &::-webkit-scrollbar-track {
+      background: var(--code-bg);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--text-color-light);
+    }
+  }
+
+  // Tag styles
+  .tag-list a code,
+  .post-tags .highlighter-rouge {
+    background-color: var(--tag-bg);
+    border-color: var(--tag-border);
+    color: var(--text-color);
+  }
+
+  .tag-list a:hover code {
+    background-color: var(--tag-hover-bg);
+    border-color: var(--tag-hover-border);
+  }
+
+  // Horizontal rules
+  hr {
+    border-color: var(--border-color);
+  }
+}
+
+.site-header {
+    border-top: none;
+    border-bottom: 1px solid $grey-color-light;
+
+    // Override Minima's wrapper constraints
+    > .wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0.5rem 2rem;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .site-title {
+        display: flex;
+        align-items: center;
+        justify-self: start;
+    }
+
+    // Header actions contains nav + theme toggle
+    .header-actions {
+        display: contents; // Let children participate in parent grid
+    }
+
+    .site-nav {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+    }
+
+    // Theme toggle right-aligned
+    .theme-toggle {
+        justify-self: end;
+    }
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+// Mobile: hamburger menu
+@media screen and (max-width: 1000px) {
+    .site-header {
+        > .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: none !important;
+            width: 100% !important;
+            margin: 0;
+        }
+
+        // Container for hamburger + theme toggle on mobile - override display: contents
+        .header-actions {
+            display: flex !important;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            margin-left: auto;
+        }
+
+        .site-nav {
+            position: static;
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            order: 1; // Hamburger first (left)
+            justify-self: auto;
+
+            .nav-trigger {
+                display: none;
+            }
+
+            label[for="nav-trigger"] {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 2;
+                width: 36px;
+                height: 36px;
+            }
+
+            .menu-icon {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .trigger {
+                display: none;
+                flex-direction: column;
+                align-items: flex-end;
+                text-align: right;
+                gap: 0;
+                padding: 0.5rem;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                margin-top: 5px;
+                background-color: var(--header-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                min-width: 150px;
+            }
+
+            input:checked ~ .trigger {
+                display: flex;
+            }
+        }
+
+        // Theme toggle styling on mobile - separate box on right
+        .theme-toggle {
+            order: 2; // Toggle second (right)
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            margin-left: 0;
+            justify-self: auto;
+        }
+    }
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.python-logo-nav {
+    display: block;
+}
+
+// Wrapper for nav icons (Python logo, turkey emoji)
+// Ensures consistent alignment in mobile dropdown
+.nav-icon-wrapper {
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+}
+
+// In mobile dropdown, make icon links full width so they right-align properly
+@media screen and (max-width: 1000px) {
+    .site-nav .trigger .page-link {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+// Profile and content styles
+.profile-image {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+// Text alignment utilities
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// Blog post image with padding
+.post-image {
+    padding: 10px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+// Featured image styling (for blog posts with logos/thumbnails)
+.featured-image {
+    padding: 0 15px 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.featured-image-wide {
+    width: 200px;
+    padding: 0 15px 0 0;
+}
+
+// Inline icon alignment (for small icons in text)
+.inline-icon {
+    vertical-align: middle;
+}
+
+.post-link-large {
+    font-size: 20px;
+}
+
+.section-divider {
+    display: block;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+// Archive list styles
+.archive-list {
+    list-style: disc;
+    padding-left: 2rem;
+    margin: 1rem 0;
+
+    li {
+        margin: 0.25rem 0;
+    }
+}
+
+// Post tags (inline tags shown on blog posts)
+.post-tags .highlighter-rouge {
+    white-space: nowrap;
+}
+
+// Tag list styles (one per line)
+.tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        text-decoration: none;
+
+        code {
+            background-color: #eef2ff;
+            border: 1px solid #c7d2fe;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.95em;
+        }
+
+        &:hover code {
+            background-color: #ddd6fe;
+            border-color: #a5b4fc;
+        }
+    }
+}
+
+// Archive scroll section
+.archive-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid $grey-color-light;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    background-color: $background-color;
+    scroll-behavior: smooth;
+
+    // Custom scrollbar styling for webkit browsers
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: lighten($grey-color-light, 10%);
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $grey-color;
+        border-radius: 0.5rem;
+
+        &:hover {
+            background: $grey-color-dark;
+        }
+    }
+
+    // Firefox scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: $grey-color lighten($grey-color-light, 10%);
+}
+
+// Dark mode toggle button
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--text-color);
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  // Hide moon by default (light mode shows sun)
+  .moon-icon {
+    display: none;
+  }
+
+  .sun-icon {
+    display: block;
+  }
+}
+
+// In dark mode, show moon and hide sun
+[data-theme="dark"] .theme-toggle {
+  .moon-icon {
+    display: block;
+  }
+
+  .sun-icon {
+    display: none;
+  }
+}
+
+// Footer styles
+footer.site-footer {
+    color: $grey-color;
+
+    * {
+        color: $grey-color;
+    }
+
+    .wrapper .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+        font-size: 16px;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 0.15rem;
+        }
+    }
+
+    .footer-svg-icon {
+        fill: $grey-color;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+}
+
+// Mobile: adjust archive scroll for smaller screens
+@media screen and (max-width: 768px) {
+    .archive-scroll {
+        max-height: 400px;
+        padding: 1rem;
+    }
+}
+
+// 404 Page Styles
+.error-container {
+    margin: 10px auto;
+    max-width: 800px;
+    text-align: center;
+
+    h1 {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .ascii-art {
+        font-family: monospace;
+        font-size: 0.7em;
+        line-height: 1.2;
+        overflow-x: auto;
+        text-align: left;
+        display: inline-block;
+        margin: 0 auto 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .error-container .ascii-art {
+        font-size: 0.45em;
+    }
+}
+
+// REPL Page Styles (dark theme)
+// Applied when body has .repl-page-body class
+body.repl-page-body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+
+    // Hide theme toggle since REPL is always dark
+    .theme-toggle {
+        display: none;
+    }
+
+    .page-content {
+        background-color: #0d1117;
+        padding: 0;
+
+        .wrapper {
+            max-width: none;
+            padding: 0;
+        }
+    }
+
+    .site-header {
+        background-color: #161b22;
+        border-bottom-color: #30363d;
+    }
+
+    .site-title,
+    .site-title:visited {
+        color: #c9d1d9;
+    }
+
+    .site-nav .page-link {
+        color: #8b949e;
+    }
+
+    .site-nav .page-link:hover {
+        color: #c9d1d9;
+    }
+
+    // Hamburger menu icon - make it visible on dark background
+    .site-nav .menu-icon > svg path {
+        fill: #8b949e;
+    }
+
+    .site-nav label[for="nav-trigger"]:hover .menu-icon > svg path {
+        fill: #c9d1d9;
+    }
+
+    // Mobile dropdown menu styling for dark theme
+    @media screen and (max-width: 1000px) {
+        .site-header .site-nav {
+            z-index: 1000;
+
+            .trigger {
+                z-index: 1001;
+
+                // Reset link color to default (dark) for white dropdown background
+                .page-link {
+                    color: #424242;
+                }
+
+                .page-link:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .site-footer {
+        background-color: #161b22;
+        border-top-color: #30363d;
+    }
+
+    .footer-content,
+    .footer-title,
+    .footer-description {
+        color: #8b949e;
+    }
+}
+
+.repl-page {
+    width: 90%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 120px);
+    min-height: calc(100dvh - 120px);
+
+    h1 {
+        color: #c9d1d9;
+        font-size: 2rem;
+        margin: 0 0 0.25rem 0;
+        text-align: center;
+    }
+}
+
+.repl-subtitle {
+    text-align: center;
+    color: #8b949e;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.repl-container {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 1rem;
+    flex: 1;
+    min-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    py-terminal {
+        display: block;
+        margin: 0;
+        flex: 1;
+        min-height: 0;
+    }
+
+    py-terminal::before {
+        content: 'Loading Python environment...';
+        display: block;
+        padding: 1rem;
+        color: #8b949e;
+        font-style: italic;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #30363d;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #484f58;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .repl-page {
+        width: 100%;
+        padding: 0.5rem;
+        min-height: calc(100vh - 100px);
+        min-height: calc(100dvh - 100px);
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .repl-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .repl-container {
+        padding: 0.5rem;
+        min-height: 60vh;
+        border-radius: 4px;
+    }
+}

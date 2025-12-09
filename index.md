@@ -2,33 +2,17 @@
 layout: page
 ---
 
-<img src="/assets/images/profile_pic.jpg" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width:50%">
-<h1 align="center">Logan Thomas</h1>
-<h3 align="center">Software Developer | Technical Trainer | Python Enthusiast</h3>
+<img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" class="profile-image" loading="lazy">
+<h1 class="text-center">Logan Thomas</h1>
+<h3 class="text-center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
 <br/>
-I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}
-as a data science software engineer.
-Before Fullstory, I was employed by [Pattern Bioscience](https://pattern.bio/){:target="_blank"}
-as a member of the software team supporting efforts in pathogen identification (ID) and
-antibiotic susceptibility testing (AST).
-I've also served as a scientific software developer and Python instructor for
-[Enthought](https://www.enthought.com/){:target="_blank"},
-worked for a protective design firm ([PEC](https://www.protection-consultants.com/){:target="_blank"})
-as a machine learning engineer, and been employed by [Nielsen](https://www.nielsen.com/){:target="_blank"}
-as a data scientist in the digital media industry.
+I'm a data science software engineer at [Fullstory](https://www.fullstory.com/){:target="_blank"}, passionate about building software and sharing knowledge. This site showcases my history of teaching, talks and tutorials given, and a blog to share recent open source contributions or other personal software musings.
 
-I am passionate about software and love sharing my knowledge with others.
-This is my personal blog where I share helpful information about data science,
-machine learning, and Python.
+[Learn more about me →](/about/)
 
-If you're interested in discussing any of the topics listed on this site,
-looking for training/mentorship, or just want to catch up over a cup of coffee
-(in-person or remote), feel free to reach out to me at
-[logan@datacentriq.net](mailto:logan@datacentriq.net?subject=[Website Contact])
+<hr class="section-divider">
 
-To see other things I'm working on, check out my GitHub page: [loganthomas](https://github.com/loganthomas){:target="_blank"}
-<br/><br/>
 <h3>Courses Taught To Date</h3>
 Total Courses: 62 Total Students: 694
 
@@ -51,6 +35,8 @@ Total Courses: 62 Total Students: 694
 | SciPy Tutorial (`numpy`)                            | 2       |
 | Software Engineering (`unittest`, `logging`, `git`) | 2       |
 
+<hr class="section-divider">
+
 <h3>Recent Posts</h3>
 {%- if site.posts.size > 0 -%}
 <ul class="post-list">
@@ -58,7 +44,7 @@ Total Courses: 62 Total Students: 694
     <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <a class="post-link" href="{{ post.url | relative_url }}" style="font-size:20px">
+        <a class="post-link post-link-large" href="{{ post.url | relative_url }}">
         {{ post.title | escape }}
         </a>
     {%- if site.show_excerpts -%}

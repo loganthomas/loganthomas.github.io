@@ -16,5 +16,5 @@ I'm honored to have been selected and enjoyed getting to know Michael.
 Check out the full interview [here!](https://www.blog.pythonlibrary.org/2023/03/13/pydev-of-the-week-logan-thomas/){:target="_blank"}
 
 <a href="https://www.blog.pythonlibrary.org" target="_blank">
-  <img src="/assets/images/mouse-vs-python-logo.png" style="padding: 0px 15px 0px 0px">
+  <img src="/assets/images/mouse-vs-python-logo.png" alt="Mouse vs Python blog logo" class="featured-image" loading="lazy">
 </a>

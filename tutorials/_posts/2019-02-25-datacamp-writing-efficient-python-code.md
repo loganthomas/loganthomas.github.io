@@ -1,5 +1,6 @@
 ---
-layout: tutorial
+layout: post
+type: tutorial
 title:  "DataCamp: Writing Efficient Python Code"
 date:   2019-02-25 08:00:00 -0500
 author: Logan Thomas
@@ -13,5 +14,5 @@ tags: python
 3. Gaining efficiencies
 4. Basic pandas optimizations
 
-<img src="/assets/images/shield_image.png" style="padding: 0px 15px 0px 0px">
-<img src="/assets/images/datacamp_logo.jpg" height="200">
+<img src="/assets/images/shield_image.png" alt="DataCamp course shield" class="featured-image" loading="lazy">
+<img src="/assets/images/datacamp_logo.jpg" alt="DataCamp logo" height="200" loading="lazy">
