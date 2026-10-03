@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Goodbye, utils.py"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-05-02 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python machine-learning
