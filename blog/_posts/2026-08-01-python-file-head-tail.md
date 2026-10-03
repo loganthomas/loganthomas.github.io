@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Heads or Tails of a File"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-08-01 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
