@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Timer That Shows Up on Time"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-03-07 08:00:00 -0600
 author: Logan Thomas
 categories: blog
 tags: python
