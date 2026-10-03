@@ -44,6 +44,7 @@ working_on:
   count: 4
   exclude:
     - homebrew-tap
+    - mlb-pitcher-xK
     - resume
     - tour-of-go
 
