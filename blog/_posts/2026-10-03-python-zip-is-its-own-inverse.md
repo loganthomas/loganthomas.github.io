@@ -1,25 +1,23 @@
 ---
 layout: post
-title:  "Python Recipe: zip Is Its Own Inverse"
+title:  "zip Undoes Itself"
 date:   2026-10-03 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
 ---
 
-## zip Is Its Own Inverse
-
-### What you will learn
-- How to "unzip" a list of pairs with ``zip(*pairs)``
-- How to transpose a list of lists with the same trick
-- What to watch out for (tuples, uneven lengths, and empty inputs)
-
-### Overview
-``zip()`` pairs up items from multiple iterables.
-There is no ``unzip()`` function in Python because ``zip()`` already does the job:
-call ``zip()`` on the *unpacked* output of ``zip()`` and you get the original sequences back.
+Every so often I have a list of pairs and I want two separate lists back.
+My first instinct is to look for an ``unzip()`` function.
+Python doesn't have one, and it doesn't need one.
+``zip()`` can undo itself.
+This post shows how that works,
+how the same trick flips rows and columns,
+and the few spots where it can trip you up.
 
 ### Zipping and Unzipping
+``zip()`` pairs up items from two or more lists:
+
 ```python
 names = ["alice", "bob", "carol"]
 scores = [90, 72, 85]
@@ -27,34 +25,42 @@ scores = [90, 72, 85]
 pairs = list(zip(names, scores))
 print(pairs)
 ```
+
 ```
 [('alice', 90), ('bob', 72), ('carol', 85)]
 ```
 
-Now unzip by passing each pair as a separate argument with ``*``:
+To unzip, call ``zip()`` again.
+The ``*`` passes each pair as its own argument:
 
 ```python
-new_names, new_scores = zip(*pairs)
-print(new_names)
-print(new_scores)
+names_again, scores_again = zip(*pairs)
+print(names_again)
+print(scores_again)
 ```
+
 ```
 ('alice', 'bob', 'carol')
 (90, 72, 85)
 ```
 
-Why does this work?
-``zip(*pairs)`` is the same as writing:
+### Why It Works
+The ``*`` spreads the list out.
+So ``zip(*pairs)`` is the same as writing this:
 
 ```python
 zip(("alice", 90), ("bob", 72), ("carol", 85))
 ```
 
-``zip()`` takes the first item from each tuple (all the names), then the second item from each tuple (all the scores).
-So ``zip(*zip(a, b))`` gives back ``a`` and ``b``.
+Now ``zip()`` sees three tuples.
+It takes the first item from each one, which gives all the names.
+Then it takes the second item from each one, which gives all the scores.
+That's why ``zip(*zip(a, b))`` hands you back ``a`` and ``b``.
 
-### Transposing a Matrix
-The same trick transposes a list of lists, turning rows into columns:
+### Flipping Rows and Columns
+The same trick works on a list of lists.
+Each inner list is a row,
+and ``zip(*rows)`` turns the rows into columns:
 
 ```python
 matrix = [
@@ -63,82 +69,97 @@ matrix = [
 ]
 print(list(zip(*matrix)))
 ```
+
 ```
 [(1, 4), (2, 5), (3, 6)]
 ```
 
-### Splitting a Dictionary into Keys and Values
-``dict.items()`` yields pairs, so it unzips too:
+In math terms, that's a transpose.
+
+### Splitting a dict into Keys and Values
+``dict.items()`` gives you pairs, so it unzips too:
 
 ```python
-d = {"a": 1, "b": 2, "c": 3}
-keys, values = zip(*d.items())
-print(keys, values)
-print(dict(zip(keys, values)))
-```
-```
-('a', 'b', 'c') (1, 2, 3)
-{'a': 1, 'b': 2, 'c': 3}
+ages = {"alice": 31, "bob": 27, "carol": 45}
+people, years = zip(*ages.items())
+print(people)
+print(years)
+print(dict(zip(people, years)))
 ```
 
-### Gotchas
+```
+('alice', 'bob', 'carol')
+(31, 27, 45)
+{'alice': 31, 'bob': 27, 'carol': 45}
+```
+
+**Aside:** if you only need the keys and values on their own,
+``list(ages)`` and ``list(ages.values())`` work fine.
+The ``zip()`` version is handy when you want both in one line.
+
+### Watch Out for These
 **You get tuples back, not lists.**
 If you need lists, convert them:
 
 ```python
 print([list(row) for row in zip(*matrix)])
 ```
+
 ```
 [[1, 4], [2, 5], [3, 6]]
 ```
 
-**Uneven lengths are silently truncated.**
-``zip()`` stops at the shortest input, which means the round trip loses data:
+**Uneven lengths get cut short.**
+``zip()`` stops at the shortest input.
+It doesn't warn you, so the round trip quietly drops data:
 
 ```python
 print(list(zip(["a", "b", "c"], [1, 2])))
 ```
+
 ```
 [('a', 1), ('b', 2)]
 ```
 
-Use ``strict=True`` (Python 3.10+) to raise an error instead,
-or ``itertools.zip_longest`` to pad the shorter input:
+Since Python 3.10, you can pass ``strict=True`` to raise an error instead:
+
+```python
+list(zip(["a", "b", "c"], [1, 2], strict=True))
+```
+
+```
+ValueError: zip() argument 2 is shorter than argument 1
+```
+
+Or use ``itertools.zip_longest()`` to fill the gaps.
+It fills with ``None`` unless you pick a ``fillvalue``:
 
 ```python
 from itertools import zip_longest
 
-list(zip(["a", "b", "c"], [1, 2], strict=True))
-```
-```
-ValueError: zip() argument 2 is shorter than argument 1
-```
-```python
 print(list(zip_longest(["a", "b", "c"], [1, 2])))
 ```
+
 ```
 [('a', 1), ('b', 2), ('c', None)]
 ```
 
-**Unzipping an empty list can't be unpacked.**
-With no pairs, ``zip(*[])`` is ``zip()``, which yields nothing.
-Unpacking it into two names fails:
+**An empty list can't be unpacked.**
+With no pairs, ``zip(*[])`` is just ``zip()``, which yields nothing.
+So there's nothing to split into two names:
 
 ```python
 pairs = []
 names, scores = zip(*pairs)
 ```
+
 ```
 ValueError: not enough values to unpack (expected 2, got 0)
 ```
 
-Guard against this if the input can be empty.
-
-### Conclusion
-``zip(*pairs)`` reverses ``zip()``.
-Use it to unzip a list of pairs, transpose a matrix, or split ``dict.items()`` into keys and values.
-Just remember that it returns tuples, truncates to the shortest input (unless ``strict=True``),
-and can't be unpacked when the input is empty.
+If your list might be empty, check for that first.
 
 ### Further Reading
 - [``zip()`` documentation](https://docs.python.org/3/library/functions.html#zip){:target="_blank"}
+- [``itertools.zip_longest()``](https://docs.python.org/3/library/itertools.html#itertools.zip_longest){:target="_blank"}
+- [PEP 618: Add Optional Length-Checking To zip](https://peps.python.org/pep-0618/){:target="_blank"}
