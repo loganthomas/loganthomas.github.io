@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "From In [1] to >>>"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-06-06 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
