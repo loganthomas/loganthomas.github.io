@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Don't Break the Chain"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-09-05 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
