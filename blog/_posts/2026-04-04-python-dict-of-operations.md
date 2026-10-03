@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Swap Your elif Chain for a dict"
-date:   2026-10-03 08:00:00 -0500
+date:   2026-04-04 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
