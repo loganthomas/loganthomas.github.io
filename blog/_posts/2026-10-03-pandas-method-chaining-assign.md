@@ -1,27 +1,23 @@
 ---
 layout: post
-title:  "Python Recipe: Pandas Method Chaining with .assign and df_"
+title:  "Don't Break the Chain"
 date:   2026-10-03 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
 ---
 
-## Pandas Method Chaining with .assign and df_
+A lot of the pandas code I read (and used to write) looks the same.
+Copy the DataFrame, add a column, add another column, filter, group, sort.
+Each step saves over the same variable.
+It works, but it's hard to read from top to bottom.
+In a notebook, it's also easy to break by running cells out of order.
 
-### What you will learn
-- How to rewrite step-by-step pandas code as a single method chain
-- How to use ``.assign()`` with a ``lambda df_:`` to reference the intermediate DataFrame
-- Why referencing the original ``df`` inside a chain can silently give wrong answers
-- How to use ``.loc``, ``.query()``, and ``.pipe()`` in a chain
-
-### Overview
-A lot of pandas code looks like this: copy the DataFrame, add a column, add another column, filter,
-group, sort, each step reassigning the same variable.
-It works, but it's hard to read top to bottom and easy to break when running notebook cells out of order.
-
-Method chaining puts the whole transformation in one expression.
-The key piece is ``.assign()`` with a ``lambda``, and the convention of naming the lambda's argument ``df_``.
+Method chaining puts the whole thing in one expression.
+In this post, I rewrite some step-by-step code as a chain.
+The key piece is ``.assign()`` with a ``lambda``,
+and a habit of naming the lambda's argument ``df_``.
+I'll also show why skipping that habit can give you a wrong answer with no error.
 
 Here is the data for the examples:
 
@@ -31,7 +27,14 @@ import pandas as pd
 df = pd.DataFrame(
     {
         "date": pd.to_datetime(
-            ["2026-01-05", "2026-01-19", "2026-02-02", "2026-02-16", "2026-03-02", "2026-03-16"]
+            [
+                "2026-01-05",
+                "2026-01-19",
+                "2026-02-02",
+                "2026-02-16",
+                "2026-03-02",
+                "2026-03-16",
+            ]
         ),
         "product": ["widget", "gadget", "widget", "gizmo", "gadget", "widget"],
         "price": [2.50, 10.00, 2.50, 7.25, 10.00, 2.50],
@@ -40,6 +43,7 @@ df = pd.DataFrame(
 )
 print(df)
 ```
+
 ```
         date product  price  qty
 0 2026-01-05  widget   2.50   12
@@ -50,8 +54,10 @@ print(df)
 5 2026-03-16  widget   2.50   20
 ```
 
-### Before: Step by Step
-Total revenue per month, only counting orders over $20:
+### Step by Step
+Say I want the total revenue for each month,
+but only for orders over $20.
+Here's the step-by-step way:
 
 ```python
 tmp = df.copy()
@@ -62,6 +68,7 @@ tmp = tmp.groupby("month", as_index=False)["revenue"].sum()
 tmp = tmp.sort_values("revenue", ascending=False)
 print(tmp)
 ```
+
 ```
       month  revenue
 1   January     60.0
@@ -69,11 +76,12 @@ print(tmp)
 0  February     43.5
 ```
 
-### After: One Chain
+### One Chain
+Here's the same thing as a chain:
+
 ```python
 result = (
-    df
-    .assign(
+    df.assign(
         revenue=lambda df_: df_["price"] * df_["qty"],
         month=lambda df_: df_["date"].dt.month_name(),
     )
@@ -84,6 +92,7 @@ result = (
 )
 print(result)
 ```
+
 ```
       month  revenue
 1   January     60.0
@@ -91,43 +100,46 @@ print(result)
 0  February     43.5
 ```
 
-Same result, no temporary variable, and ``df`` is never modified.
-Wrapping the chain in parentheses lets each method sit on its own line.
+We get the same result with no temporary variable,
+and ``df`` is never changed.
+The outer parentheses let each method sit on its own line.
+You read it top to bottom, one step per line.
 
 ### Why lambda df_?
 Inside a chain, the DataFrame changes at every step.
-When ``.assign()`` (or ``.loc[]``) is given a function, pandas calls it with the DataFrame *at that point in the chain*.
-Naming the argument ``df_`` is a convention that makes this obvious:
-``df`` is the original, ``df_`` is the intermediate one.
+You can pass a function to ``.assign()`` or ``.loc[]``.
+When you do, pandas calls it with the DataFrame as it is at that point in the chain.
+Naming the argument ``df_`` makes this easy to see.
+``df`` is the original.
+``df_`` is the one in the middle of the chain.
 
-Referencing ``df`` directly inside a chain causes two kinds of problems.
-
-**A column created earlier in the chain doesn't exist on ``df``:**
+Using ``df`` inside a chain causes two kinds of problems.
+The first is loud.
+A column you just made doesn't exist on ``df``:
 
 ```python
-(
-    df
-    .assign(revenue=df["price"] * df["qty"])
-    .assign(big_order=df["revenue"] > 20)
+df.assign(
+    revenue=df["price"] * df["qty"],
+    big_order=df["revenue"] > 20,
 )
 ```
+
 ```
 KeyError: 'revenue'
 ```
 
-**Worse, it can silently compute the wrong thing.**
-After a filter, ``df`` still has *all* the rows:
+The second is worse because it's quiet.
+After a filter, ``df`` still has all the rows:
 
 ```python
 print(
-    df
-    .loc[lambda df_: df_["product"] == "widget"]
-    .assign(
+    df.loc[lambda df_: df_["product"] == "widget"].assign(
         share_wrong=df["qty"] / df["qty"].sum(),
         share_right=lambda df_: df_["qty"] / df_["qty"].sum(),
     )
 )
 ```
+
 ```
         date product  price  qty  share_wrong  share_right
 0 2026-01-05  widget    2.5   12     0.260870     0.333333
@@ -135,13 +147,14 @@ print(
 5 2026-03-16  widget    2.5   20     0.434783     0.555556
 ```
 
-``share_wrong`` divides by the total quantity of *every* product, not just widgets.
-There's no error, the number is just wrong.
+``share_wrong`` divides by the total quantity of every product, not just widgets.
+There's no error.
+The number is just wrong.
 Using ``lambda df_:`` avoids both problems.
 
-### Referencing Columns from the Same .assign
-Keyword arguments in ``.assign()`` are applied in order,
-so a later column can use one created earlier in the same call:
+### Building on Earlier Columns
+``.assign()`` adds its columns in the order you write them.
+So a later column can use one made earlier in the same call:
 
 ```python
 print(
@@ -151,6 +164,7 @@ print(
     ).round({"revenue_share": 3})
 )
 ```
+
 ```
         date product  price  qty  revenue  revenue_share
 0 2026-01-05  widget   2.50   12     30.0          0.173
@@ -162,16 +176,18 @@ print(
 ```
 
 ### Filtering with .query
-``.query()`` is an alternative to ``.loc[lambda df_: ...]`` that reads well for simple conditions.
-It also sees columns created earlier in the chain:
+``.query()`` is another way to filter.
+For simple conditions, it reads better than ``.loc[lambda df_: ...]``.
+It also sees columns made earlier in the chain:
 
 ```python
 print(
-    df
-    .assign(revenue=lambda df_: df_["price"] * df_["qty"])
-    .query("revenue > 20 and product == 'widget'")
+    df.assign(revenue=lambda df_: df_["price"] * df_["qty"]).query(
+        "revenue > 20 and product == 'widget'"
+    )
 )
 ```
+
 ```
         date product  price  qty  revenue
 0 2026-01-05  widget    2.5   12     30.0
@@ -179,9 +195,10 @@ print(
 ```
 
 ### Custom Steps with .pipe
-When a step doesn't fit a built-in method, write a function that takes and returns a DataFrame,
-then call it with ``.pipe()``.
-Extra arguments are passed through:
+Sometimes a step doesn't fit any built-in method.
+In that case, write a function that takes a DataFrame and returns one.
+Then call it with ``.pipe()``.
+Any extra arguments get passed along to your function:
 
 ```python
 def add_revenue(df_, discount=0.0):
@@ -190,6 +207,7 @@ def add_revenue(df_, discount=0.0):
 
 print(df.pipe(add_revenue, discount=0.1).head(3))
 ```
+
 ```
         date product  price  qty  revenue
 0 2026-01-05  widget    2.5   12     27.0
@@ -197,12 +215,14 @@ print(df.pipe(add_revenue, discount=0.1).head(3))
 2 2026-02-02  widget    2.5    4      9.0
 ```
 
-### pd.col (pandas 3.0+)
-pandas 3.0 added ``pd.col()``, which refers to a column of the intermediate DataFrame without a ``lambda``:
+### pd.col in pandas 3.0
+pandas 3.0 added ``pd.col()``.
+It points to a column of the DataFrame in the chain, with no ``lambda`` needed:
 
 ```python
 print(df.assign(revenue=pd.col("price") * pd.col("qty")).head(3))
 ```
+
 ```
         date product  price  qty  revenue
 0 2026-01-05  widget    2.5   12     30.0
@@ -212,12 +232,7 @@ print(df.assign(revenue=pd.col("price") * pd.col("qty")).head(3))
 
 On older versions of pandas, stick with ``lambda df_:``.
 
-### Conclusion
-Method chaining turns a series of reassignments into one readable expression that doesn't modify the original data.
-Inside the chain, always reference the intermediate DataFrame with ``lambda df_:`` (or ``pd.col()``),
-never the original ``df``,
-or you risk a ``KeyError`` at best and a silently wrong answer at worst.
-
 ### Further Reading
 - [``DataFrame.assign``](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html){:target="_blank"}
 - [``DataFrame.pipe``](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pipe.html){:target="_blank"}
+- [``pandas.col``](https://pandas.pydata.org/docs/reference/api/pandas.col.html){:target="_blank"}
