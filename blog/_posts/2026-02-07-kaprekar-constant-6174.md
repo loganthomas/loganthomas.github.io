@@ -35,14 +35,13 @@ You always get ``7641`` as the biggest and ``1467`` as the smallest,
 which puts you right back where you started: ``7641 - 1467 = 6174``.
 
 The routine is named after the Indian mathematician D. R. Kaprekar.
-In this post, I build the routine in Python,
-walk through a leading zero gotcha that breaks a simple version,
-and check every four-digit number to see if the claim holds.
+In this post, I write the routine in Python and use it to verify these claims.
 
 ### One Step at a Time
 In Python, we'll start with a single step and build the full routine after that.
 Each step pads the number to four digits, sorts, and subtracts.
-The ``width`` argument comes in handy later for three-digit numbers:
+The ``width`` argument comes in handy if we want to test numbers other than four digits,
+but we'll stick with four for now:
 
 ```python
 def kaprekar_step(n, width=4):
@@ -160,7 +159,7 @@ Then ``Counter`` tallies how many steps each valid number takes.
 We subtract one from the path length
 because the path includes the starting number, and that doesn't count as a step.
 The output shows how many valid numbers there are after skipping invalid ones (8,991),
-followed by a breakdown of each step count (0 to 7)
+followed by a bar chart of each step count (0 to 7)
 and how many valid numbers needed that many steps:
 
 ```python
@@ -169,26 +168,30 @@ from collections import Counter
 valid = [n for n in range(1000, 10_000) if len(set(str(n))) > 1]
 steps = Counter(len(kaprekar_path(n)) - 1 for n in valid)
 
-print(len(valid))
+print(f"{len(valid):,} valid numbers")
 for k in sorted(steps):
-    print(k, steps[k])
+    bar = "█" * (steps[k] // 50)
+    print(f"{k} │{bar} {steps[k]:,}")
 ```
 
 ```
-8991
-0 1
-1 356
-2 519
-3 2124
-4 1124
-5 1379
-6 1508
-7 1980
+8,991 valid numbers
+0 │ 1
+1 │███████ 356
+2 │██████████ 519
+3 │██████████████████████████████████████████ 2,124
+4 │██████████████████████ 1,124
+5 │███████████████████████████ 1,379
+6 │██████████████████████████████ 1,508
+7 │███████████████████████████████████████ 1,980
 ```
 
-For example, exactly 1,379 numbers needed five steps to hit 6174.
-All 8,991 numbers reach 6174, and none take more than seven steps.
+Exactly 1,379 numbers needed five steps to hit 6174.
+Three steps is the most common,
+and the count dips at four before it climbs again toward seven.
 The single ``0`` step entry is 6174 itself.
+
+All 8,991 numbers reach 6174, and none take more than seven steps.
 
 ### What About Other Lengths?
 Three digits work too, with a different constant.
