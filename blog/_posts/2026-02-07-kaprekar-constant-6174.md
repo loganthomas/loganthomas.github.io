@@ -209,7 +209,7 @@ print(path)
 ```
 
 Past four digits, there's no single constant.
-Three and four are the only lengths where every number lands on a single constant.
+Three and four are the only lengths that have one.
 
 So 6174 really is special.
 Start with almost any four-digit number, sort, subtract, and repeat,
