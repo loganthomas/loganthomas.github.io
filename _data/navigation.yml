@@ -4,10 +4,8 @@
   link: /blog/
 - name: Coffee & Code
   link: /coffee_n_code/
-- name: Talks
-  link: /talks/
-- name: Tutorials
-  link: /tutorials/
+- name: Teaching & Talks
+  link: /teaching/
 - name: PYTHON_LOGO
   link: /repl/
 - name: TURKEY_EMOJI

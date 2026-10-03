@@ -4,36 +4,14 @@ layout: page
 
 <img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" class="profile-image" loading="lazy">
 <h1 class="text-center">Logan Thomas</h1>
-<h3 class="text-center">Software Developer | Technical Trainer | Python Enthusiast</h3>
-
 <br/>
-I'm a data science software engineer at [Fullstory](https://www.fullstory.com/){:target="_blank"}, passionate about building software and sharing knowledge. This site showcases my history of teaching, talks and tutorials given, and a blog to share recent open source contributions or other personal software musings.
+I'm a data science software engineer at [Fullstory](https://www.fullstory.com/){:target="_blank"}, passionate about building software and sharing knowledge. This site is where I share what I'm building, blog about open source contributions and other software musings, and keep a record of the teaching and talks I've given.
 
 [Learn more about me →](/about/)
 
 <hr class="section-divider">
 
-<h3>Courses Taught To Date</h3>
-Total Courses: 62 Total Students: 694
-
-| Year   | Count   |
-| ------ | ------- |
-| 2025   |  1      |
-| 2024   |  2      |
-| 2023   | 25      |
-| 2022   | 20      |
-| 2021   | 14      |
-
-
-| Topic                                               | Count   |
-| --------------------------------------------------- | ------- |
-| Deep Learning (`tensorflow`, `keras`, `torch`)      | 19      |
-| Machine Learning (`sklearn`)                        | 14      |
-| Python Foundations (`numpy` & `pandas`)             | 13      |
-| Data Analytics (`pandas` & `xarray`)                | 8       |
-| Corporate Hackathon                                 | 4       |
-| SciPy Tutorial (`numpy`)                            | 2       |
-| Software Engineering (`unittest`, `logging`, `git`) | 2       |
+{% include working_on.html %}
 
 <hr class="section-divider">
 
@@ -54,3 +32,25 @@ Total Courses: 62 Total Students: 694
     {%- endfor -%}
 </ul>
 {%- endif -%}
+
+<hr class="section-divider">
+
+<h3>Recent Talks</h3>
+<ul class="post-list">
+    {%- assign shown = 0 -%}
+    {%- for post in site.posts -%}
+    {%- if shown == 3 -%}{%- break -%}{%- endif -%}
+    {%- if post.type == "talk" or post.type == "tutorial" -%}
+    {%- assign shown = shown | plus: 1 -%}
+    <li>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a class="post-link post-link-large" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+        </a>
+    </li>
+    {%- endif -%}
+    {%- endfor -%}
+</ul>
+
+[See all Teaching & Talks →](/teaching/)
