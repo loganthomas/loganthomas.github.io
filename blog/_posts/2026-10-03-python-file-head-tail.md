@@ -1,36 +1,34 @@
 ---
 layout: post
-title:  "Python Recipe: Reading the Head or Tail of a File"
+title:  "Heads or Tails of a File"
 date:   2026-10-03 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python
 ---
 
-## Reading the Head or Tail of a File
-
-### What you will learn
-- How to read the first ``n`` lines of a file with ``itertools.islice``
-- How to read the last ``n`` lines of a file with ``collections.deque``
-- How to read the last ``n`` lines of a large file quickly by seeking from the end
-
-### Overview
 On the command line, ``head`` and ``tail`` are second nature.
-In Python, I always end up reaching for ``f.readlines()`` which reads the *entire* file into memory just to look at a few lines.
-That's fine for small files but slow (or impossible) for large logs and data dumps.
+In Python, I always end up reaching for ``f.readlines()``.
+That reads the *whole* file into memory just so I can look at a few lines.
+It's fine for a small file,
+but slow (or worse) for a big log or data dump.
+This post shows how to grab the first few lines with ``itertools.islice``,
+the last few with ``collections.deque``,
+and the last few of a big file by jumping to the end.
 
-For the examples below, assume a file with 100,000 lines:
+For the examples, we'll use a file with 100,000 lines:
 
 ```python
 from pathlib import Path
 
-Path("server.log").write_text("".join(f"line {i}\n" for i in range(1, 100_001)))
+lines = "".join(f"line {i}\n" for i in range(1, 100_001))
+Path("server.log").write_text(lines)
 ```
 
-### Head
-A file object is an iterator over its lines.
-``itertools.islice`` takes the first ``n`` items from an iterator and stops,
-so only the lines needed are read:
+### The First Few Lines
+A file object hands you its lines one at a time.
+``itertools.islice`` takes the first ``n`` items and stops,
+so Python only reads the lines you ask for:
 
 ```python
 from itertools import islice
@@ -43,24 +41,36 @@ def head(path, n=10):
 
 print(head("server.log", n=3))
 ```
+
 ```
 ['line 1\n', 'line 2\n', 'line 3\n']
 ```
 
-Each line keeps its trailing newline.
+Each line keeps its newline at the end.
 Use ``print(line, end="")`` or ``line.rstrip("\n")`` if that gets in the way.
 
-If the file is a CSV going into pandas, ``nrows`` does the same thing:
+**Aside:** if the file is a CSV headed for pandas,
+the ``nrows`` argument does the same job:
 
 ```python
 import pandas as pd
 
-pd.read_csv("data.csv", nrows=3)
+rows = "".join(f"{i},{i * 10}\n" for i in range(1, 100_001))
+Path("data.csv").write_text("id,value\n" + rows)
+print(pd.read_csv("data.csv", nrows=3))
 ```
 
-### Tail
-A ``deque`` with ``maxlen`` only keeps the last ``maxlen`` items added to it.
-Feed it the whole file and what's left are the last ``n`` lines:
+```
+   id  value
+0   1     10
+1   2     20
+2   3     30
+```
+
+### The Last Few Lines
+A ``deque`` with a ``maxlen`` only holds that many items.
+When a new one comes in, the oldest one falls off the other end.
+Feed it the whole file, and what's left are the last ``n`` lines:
 
 ```python
 from collections import deque
@@ -73,16 +83,18 @@ def tail(path, n=10):
 
 print(tail("server.log", n=3))
 ```
+
 ```
 ['line 99998\n', 'line 99999\n', 'line 100000\n']
 ```
 
-Memory stays small since only ``n`` lines are held at a time,
-but every line in the file is still read.
+Memory stays small, since it only holds ``n`` lines at a time.
+But Python still reads every line in the file to get there.
 
-### Tail for Large Files
-For a large file, it's much faster to jump to the end and read backwards in blocks
-until enough newlines have been found:
+### Jumping to the End
+For a big file, it's much faster to skip to the end.
+From there, read backwards in blocks
+until you've found enough newlines:
 
 ```python
 import os
@@ -102,25 +114,42 @@ def fast_tail(path, n=10, block_size=4096):
 
 print(fast_tail("server.log", n=3))
 ```
+
 ```
 ['line 99998', 'line 99999', 'line 100000']
 ```
 
-A few notes:
-- The file is opened in binary mode (``"rb"``) because text mode doesn't support seeking relative to the end.
-- The loop reads until it has *more* than ``n`` newlines, since the last line usually ends with one.
-- ``splitlines()`` drops the newline characters, so these lines don't have a trailing ``\n``.
-- It works on files shorter than ``n`` lines too (``end`` hits ``0`` and the loop stops).
+A few notes on how it works:
+- ``f.seek(0, os.SEEK_END)`` jumps to the end and returns the file size in bytes.
+- The file is opened in binary mode (``"rb"``).
+  Text mode won't let you seek to any byte you like,
+  only to the start, the end, or a spot that ``f.tell()`` gave you.
+- The loop keeps going until it has *more* than ``n`` newlines,
+  since the last line usually ends with one.
+  The extra newline also means the first line in ``data``,
+  which may be cut off partway, is never returned.
+- ``splitlines()`` drops the newlines,
+  so these lines don't end in ``\n``.
+- ``.decode()`` assumes the file is UTF-8.
+  Pass a different encoding if yours isn't.
+- It works on files with fewer than ``n`` lines too.
+  ``end`` hits ``0`` and the loop stops.
 
-On the 100,000 line file, the ``deque`` version took about 5.5 ms and the seek version about 45 µs on my machine.
-The gap grows with the size of the file, since the seek version only reads the last few blocks.
+On the 100,000 line file,
+the ``deque`` version took about 5.4 ms on my machine
+and the seek version took about 46 µs.
+Your numbers will vary.
+The gap grows as the file grows,
+since the seek version only reads the last few blocks.
 
-### Conclusion
-Avoid ``readlines()`` when you only need a few lines.
-Use ``islice(f, n)`` for the head of a file,
-``deque(f, maxlen=n)`` for a simple tail,
-and seek from the end when the file is large.
+### Which One to Use
+- **First few lines**: ``islice(f, n)``.
+- **Last few lines of a small or medium file**: ``deque(f, maxlen=n)``.
+- **Last few lines of a big file**: seek from the end.
+- **The whole file at once**: that's when ``readlines()`` makes sense.
 
 ### Further Reading
 - [``itertools.islice``](https://docs.python.org/3/library/itertools.html#itertools.islice){:target="_blank"}
 - [``collections.deque``](https://docs.python.org/3/library/collections.html#collections.deque){:target="_blank"}
+- [``io.IOBase.seek``](https://docs.python.org/3/library/io.html#io.IOBase.seek){:target="_blank"}
+- [``pandas.read_csv``](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html){:target="_blank"}
