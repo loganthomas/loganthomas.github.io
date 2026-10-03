@@ -1,37 +1,38 @@
 ---
 layout: post
-title:  "Naming Things Is Hard: Using TF-IDF to Name Python Modules and Packages"
+title:  "Goodbye, utils.py"
 date:   2026-10-03 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: python machine-learning
 ---
 
-## Naming Things Is Hard: Using TF-IDF to Name Python Modules and Packages
-
-### What you will learn
-- How to tokenize Python source code into words (splitting ``snake_case`` and ``camelCase``)
-- How to use scikit-learn's ``TfidfVectorizer`` on source files
-- How to read the top TF-IDF terms as name suggestions for a file, module, or package
-
-### Overview
-Every project I work on ends up with a ``utils.py`` (or a ``helpers.py``, or a ``misc.py``).
+Every project I work on ends up with a ``utils.py``.
+Sometimes it's a ``helpers.py`` or a ``misc.py``.
 These names say nothing about what's inside.
-The code itself usually knows better than I do: the words that show up a lot in one file,
-but not in the rest of the codebase, are a pretty good description of that file.
+The code itself usually knows better than I do.
+The words that show up a lot in one file,
+but not in the rest of the codebase,
+are a pretty good description of that file.
 
-That is exactly what [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf){:target="_blank"}
+That's what [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf){:target="_blank"}
 (term frequency, inverse document frequency) measures.
-A word scores high for a document when it appears often in that document
-and rarely in the other documents.
-Treat each source file as a document, and the highest scoring words become name candidates.
+A word scores high for a document when it shows up often in that document
+and rarely in the others.
+If each source file is a document,
+the top words become name ideas.
+In this post, I split Python code into words,
+score them with scikit-learn's ``TfidfVectorizer``,
+and test the idea on the standard library before using it on my own code.
 
-### Tokenizing Source Code
-The default tokenizer in ``TfidfVectorizer`` is built for prose.
-Source code needs a little help:
-identifiers like ``parseHTTPResponse`` or ``raw_body`` should be split into words,
-and Python keywords and builtins (``def``, ``return``, ``self``, ``len``) should be ignored
+### Splitting Code into Words
+The default tokenizer in ``TfidfVectorizer`` is built for plain text.
+Code needs a little help.
+Names like ``parseResponse`` or ``raw_body`` should be split into words.
+Python keywords and builtins (``def``, ``return``, ``self``, ``len``) should be dropped,
 since every file has them.
+I also drop words with two letters or fewer,
+since short names like ``i``, ``x``, and ``fp`` don't say much.
 
 ```python
 import builtins
@@ -60,22 +61,31 @@ def tokenize(source):
     return words
 
 
-print(tokenize("def parseHTTPResponse(self, raw_body): return None"))
+print(tokenize("def parseResponse(self, raw_body): return None"))
 print(tokenize("class TarInfo:  # holds the tar header"))
 ```
+
 ```
-['parse', 'httpresponse', 'raw', 'body']
+['parse', 'response', 'raw', 'body']
 ['tar', 'info', 'holds', 'tar', 'header']
 ```
 
-``IDENTIFIER`` only matches letters, so underscores and digits split ``snake_case`` names for free.
-``CAMEL`` splits on a lowercase letter followed by an uppercase letter.
-Comments and docstrings are kept on purpose; they often contain the best description of the code.
+``IDENTIFIER`` only matches letters,
+so underscores and digits split ``snake_case`` names for free.
+``CAMEL`` splits where a lowercase letter is followed by an uppercase one.
+Comments and docstrings are kept on purpose.
+They often hold the best description of the code.
 
-### Sanity Check on the Standard Library
-Before trusting this on my own code, I want to see if it can recover names that are already good.
-The Python standard library is a nice test set since each module is already well named.
-(The results below are from Python 3.12; other versions will shift slightly.)
+**Aside:** this simple split doesn't break up acronyms.
+A name like ``parseHTTPResponse`` becomes ``parse`` and ``httpresponse``.
+Most Python code uses ``snake_case``, so I didn't bother handling it.
+
+### Testing on the Standard Library
+Before I trust this on my own code,
+I want to see if it can find names that are already good.
+The standard library is a nice test set, since its modules are already well named.
+The results below are from Python 3.12.
+Other versions will shift a little.
 
 ```python
 import sysconfig
@@ -97,8 +107,8 @@ FILES = [
 docs = {name: (STDLIB / name).read_text() for name in FILES}
 ```
 
-To make it a real test, add a mystery file.
-Here's a ``utils.py`` that I definitely did not name well:
+To make it a real test, I'll add a mystery file.
+Here's a ``utils.py`` that I did not name well:
 
 ```python
 docs["utils.py"] = '''
@@ -123,34 +133,46 @@ def retry(func, attempts=5, exceptions=(ConnectionError,)):
 '''
 ```
 
-### Fitting TF-IDF
-Pass the custom ``tokenize`` function to ``TfidfVectorizer``.
-``token_pattern=None`` silences a warning about the unused default pattern,
-and ``lowercase=False`` skips a step the tokenizer already handles.
-``sublinear_tf=True`` uses ``1 + log(tf)`` so a word that appears 200 times doesn't completely drown out one that appears 20 times.
+### Scoring with TF-IDF
+Now pass ``tokenize`` to ``TfidfVectorizer``.
+A few settings matter here:
+
+- ``lowercase=False`` is needed.
+  By default the text is lowercased before the tokenizer sees it,
+  and then ``CAMEL`` has nothing to split.
+- ``token_pattern=None`` turns off a warning that the default pattern won't be used.
+- ``sublinear_tf=True`` counts ``1 + log(tf)`` instead of the raw count.
+  That way a word that shows up 200 times doesn't drown out one that shows up 20 times.
+
+I wrap it in a function since I'll use it again for packages.
+It returns one row per document and one column per word:
 
 ```python
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-vectorizer = TfidfVectorizer(
-    tokenizer=tokenize,
-    lowercase=False,
-    token_pattern=None,
-    sublinear_tf=True,
-)
-X = vectorizer.fit_transform(docs.values())
-print(X.shape)
 
-scores = pd.DataFrame(
-    X.toarray(),
-    index=list(docs),
-    columns=vectorizer.get_feature_names_out(),
-)
+def tfidf_scores(docs):
+    vectorizer = TfidfVectorizer(
+        tokenizer=tokenize,
+        lowercase=False,
+        token_pattern=None,
+        sublinear_tf=True,
+    )
+    X = vectorizer.fit_transform(docs.values())
+    return pd.DataFrame(
+        X.toarray(),
+        index=list(docs),
+        columns=vectorizer.get_feature_names_out(),
+    )
 
+
+scores = tfidf_scores(docs)
+print(scores.shape)
 for name, row in scores.iterrows():
     print(f"{name:<15} {', '.join(row.nlargest(5).index)}")
 ```
+
 ```
 (11, 2879)
 calendar.py     month, day, calendar, year, locale
@@ -167,13 +189,15 @@ utils.py        delay, backoff, sleep, attempts, attempt
 ```
 
 The standard library modules mostly name themselves.
-``calendar``, ``gzip``, ``smtp``, ``tar``, ``heap``, and ``uuid`` all show up in their own top five.
+``calendar``, ``gzip``, ``smtp``, ``tar``, ``heap``, and ``uuid``
+all show up in their own top five.
 
 Here are the scores for the mystery file:
 
 ```python
 print(scores.loc["utils.py"].nlargest(8).round(3))
 ```
+
 ```
 delay         0.389
 backoff       0.342
@@ -187,36 +211,36 @@ Name: utils.py, dtype: float64
 ```
 
 ``backoff.py`` (or ``retry.py``) is a much better name than ``utils.py``.
-Treat the output as a list of suggestions.
-It still takes a human to pick the name, but it's a lot easier to pick from a list than a blank page.
+I treat the output as a list of ideas.
+It still takes a person to pick the name.
+But it's a lot easier to pick from a list than from a blank page.
 
 ### Naming a Package
 The same idea works one level up.
-Join every ``.py`` file in a directory into one document, and each document now represents a package:
+Join every ``.py`` file in a folder into one document,
+and each document now stands for a package:
 
 ```python
-PACKAGES = ["json", "email", "http", "logging", "sqlite3", "unittest", "asyncio", "importlib"]
+PACKAGES = [
+    "json",
+    "email",
+    "http",
+    "logging",
+    "sqlite3",
+    "unittest",
+    "asyncio",
+    "importlib",
+]
 pkg_docs = {
     pkg: "\n".join(path.read_text() for path in sorted((STDLIB / pkg).rglob("*.py")))
     for pkg in PACKAGES
 }
 
-pkg_vectorizer = TfidfVectorizer(
-    tokenizer=tokenize,
-    lowercase=False,
-    token_pattern=None,
-    sublinear_tf=True,
-)
-X_pkg = pkg_vectorizer.fit_transform(pkg_docs.values())
-pkg_scores = pd.DataFrame(
-    X_pkg.toarray(),
-    index=list(pkg_docs),
-    columns=pkg_vectorizer.get_feature_names_out(),
-)
-
+pkg_scores = tfidf_scores(pkg_docs)
 for name, row in pkg_scores.iterrows():
     print(f"{name:<10} {', '.join(row.nlargest(5).index)}")
 ```
+
 ```
 json       nextchar, indent, iterencode, json, infinity
 email      defect, defects, cfws, charset, cte
@@ -228,30 +252,32 @@ asyncio    fut, waiter, cancelled, cancel, coro
 importlib  metadata, loader, traversable, fullname, bootstrap
 ```
 
-Packages are noisier than single files since they cover more ground.
-Still, ``json``, ``sqlite``, ``mock``/``suite``, and ``loader`` point in the right direction.
+Packages are noisier than single files, since they cover more ground.
+Still, ``json``, ``sqlite``, ``mock``, ``suite``, and ``loader`` point the right way.
 
 ### Running It on Your Own Code
-Swap the standard library for your project.
-Each file in the project is a document, which means the IDF part is computed against *your* codebase.
-Words that appear everywhere in your project (your domain, your company name) get pushed down,
-and the words specific to each file float up.
+To use this on a real project, swap the standard library for your code.
+Each file in the project is a document,
+so the "rare across documents" part is measured against *your* codebase:
 
 ```python
 PROJECT = Path("src/my_project")
-docs = {str(path.relative_to(PROJECT)): path.read_text() for path in PROJECT.rglob("*.py")}
+docs = {
+    str(path.relative_to(PROJECT)): path.read_text() for path in PROJECT.rglob("*.py")
+}
+scores = tfidf_scores(docs)
 ```
 
-A few tips:
-- Add project-wide words (the package name, ``logger``, ``config``) to ``STOP_WORDS`` if they crowd the results.
-- Very small files don't have much signal. Use the results as a starting point.
-- If two files share the same top terms, they might belong together.
+Words that show up all over your project,
+like your package or company name, get pushed down.
+The words that are special to each file float up.
 
-### Conclusion
-TF-IDF scores a word by how often it appears in one document and how rare it is across the rest.
-Point it at source code, with a tokenizer that understands identifiers,
-and the top terms describe what each file actually does.
-It won't name your code for you, but it's a quick way to get out of ``utils.py``.
+A few tips:
+- Add project-wide words (the package name, ``logger``, ``config``) to ``STOP_WORDS``
+  if they crowd the results.
+- Very small files don't have much to go on.
+  Use their results as a starting point.
+- If two files share the same top words, they might belong together.
 
 ### Further Reading
 - [``TfidfVectorizer``](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html){:target="_blank"}
