@@ -6,7 +6,6 @@ permalink: /about/
 
 <img src="/assets/images/profile_pic.jpg" alt="Logan Thomas profile picture" class="profile-image" loading="lazy">
 <h1 class="text-center">Logan Thomas</h1>
-<h3 class="text-center">Software Developer | Technical Trainer | Python Enthusiast</h3>
 
 <br/>
 I currently work for [Fullstory](https://www.fullstory.com/){:target="_blank"}

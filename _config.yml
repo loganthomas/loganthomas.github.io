@@ -20,7 +20,7 @@
 
 title: loganthomas.dev
 email: logan.thomas005@gmail.com
-description: Data Science | Machine Learning | Python # >- this means to ignore newlines until "baseurl:"
+description: Data Science | Machine Learning | Software Engineering | Python # >- this means to ignore newlines until "baseurl:"
 domain: loganthomas.github.io
 url: https://loganthomas.github.io # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -36,6 +36,16 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Landing page "What I'm Working On" cards, pulled from GitHub at page load.
+# Forks, archived repos, and repos without a description are skipped automatically.
+working_on:
+  count: 4
+  exclude:
+    - homebrew-tap
+    - resume
+    - tour-of-go
 
 # Show post excerpts on listing pages
 show_excerpts: false

@@ -1,0 +1,59 @@
+{%- assign github_user = site.minima.social_links.github -%}
+<h3>What I'm Working On</h3>
+<div class="project-grid" id="project-grid">
+  <p>
+    See what I'm building on
+    <a href="https://github.com/{{ github_user }}" target="_blank">GitHub @{{ github_user }}</a>.
+  </p>
+</div>
+
+<script>
+  (function() {
+    const user = {{ github_user | jsonify }};
+    const config = {{ site.working_on | jsonify }};
+    const grid = document.getElementById('project-grid');
+
+    // Repos without a description are usually scratch or config repos, not projects worth showcasing
+    function isShowcase(repo) {
+      return !repo.fork && !repo.archived && repo.description && !config.exclude.includes(repo.name);
+    }
+
+    function renderCard(repo) {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = repo.html_url;
+      card.target = '_blank';
+
+      const name = document.createElement('span');
+      name.className = 'project-name';
+      name.textContent = repo.name;
+
+      const description = document.createElement('p');
+      description.className = 'project-description';
+      description.textContent = repo.description;
+
+      const updated = new Date(repo.pushed_at).toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric',
+      });
+      const meta = document.createElement('span');
+      meta.className = 'project-meta';
+      meta.textContent = [repo.language, `Updated ${updated}`].filter(Boolean).join(' · ');
+
+      card.append(name, description, meta);
+      return card;
+    }
+
+    fetch(`https://api.github.com/users/${user}/repos?sort=pushed&per_page=30`)
+      .then(function(response) {
+        if (!response.ok) throw new Error(response.status);
+        return response.json();
+      })
+      .then(function(repos) {
+        const projects = repos.filter(isShowcase).slice(0, config.count);
+        if (projects.length > 0) grid.replaceChildren(...projects.map(renderCard));
+      })
+      // Unauthenticated API calls are rate limited per visitor IP; keep the GitHub link fallback
+      .catch(function() {});
+  })();
+</script>
