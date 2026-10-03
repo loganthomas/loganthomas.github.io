@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "All Roads Lead to 6174"
-date:   2026-02-07 08:00:00 -0600
+date:   2026-10-03 08:00:00 -0500
 author: Logan Thomas
 categories: blog
 tags: math
