@@ -4,7 +4,7 @@ title:  "Build a scalable feature engineering pipeline with polars | Fullstory"
 date:   2025-09-23 08:00:00 -0500
 author: Logan Thomas
 categories: blog
-tags: python machine-learning data-engineering
+tags: python data-science machine-learning data-engineering
 ---
 ### [Build a scalable feature engineering pipeline with polars | Fullstory](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
 

@@ -4,7 +4,7 @@ title:  "A practical guide to processing Fullstory events with dbt | Fullstory"
 date:   2025-09-09 08:00:00 -0500
 author: Logan Thomas
 categories: blog
-tags: python machine-learning data-engineering
+tags: python data-science machine-learning data-engineering
 ---
 ### [A practical guide to processing Fullstory events with dbt | Fullstory](https://www.fullstory.com/blog/dbt-labeling-nested-json-for-ml/){:target="_blank"}
 
