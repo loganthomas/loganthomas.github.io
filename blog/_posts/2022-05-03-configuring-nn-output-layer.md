@@ -20,7 +20,7 @@ When I first started my deep learning journey, I had the same kinds of questions
 Now, as an Instructor at [Enthought](https://www.enthought.com){:target="_blank"}, I’m helping scientists and engineers across multiple industries overcome this same type of hurdle.
 The result is this blog post—which is one of my favorite [resources](https://www.enthought.com/wp-content/uploads/2022-05-neural-network-output-layer.pdf){:target="_blank"} from the Enthought Training team.
 
-[Read more here!](https://www.enthought.com/blog/neural-network-output-layer/){:target="_blank"}
+[Read the full post on Enthought →](https://www.enthought.com/blog/neural-network-output-layer/){:target="_blank"}
 
 <img src="/assets/images/output-layer-nn.png" alt="Neural network output layer configuration diagram" class="featured-image" loading="lazy">
 

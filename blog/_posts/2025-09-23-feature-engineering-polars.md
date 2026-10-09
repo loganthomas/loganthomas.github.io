@@ -12,6 +12,6 @@ Feature engineering is the bridge between raw data and machine learning insights
 
 While Python offers several frameworks for data processing ([pandas](https://pandas.pydata.org/){:target="_blank"} for ease of use, [PySpark](https://spark.apache.org/docs/latest/api/python/){:target="_blank"} for distributed computing), `Polars` provides an efficient middle ground for building scalable, maintainable pipelines. The article covers practical techniques for parsing `JSON` data with `JSONPath` syntax and transforming event streams into powerful ML-ready features. Learn how to convert every click, scroll, and pause into predictive insights using a modern approach to feature engineering.
 
-[Read more here!](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
+[Read the full post on Fullstory →](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
 
 <img src="/assets/images/feature-engineering-polars.png" alt="Feature engineering with Polars diagram" class="featured-image" loading="lazy">

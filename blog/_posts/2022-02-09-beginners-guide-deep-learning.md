@@ -16,7 +16,7 @@ Or, is this some type of elusive marriage masked by marketing hype?
 Before even considering these questions, we need to take a step back and accurately define what deep learning is.
 
 
-[Read more here!](https://www.enthought.com/a-beginners-guide-to-deep-learning/){:target="_blank"}
+[Read the full post on Enthought →](https://www.enthought.com/a-beginners-guide-to-deep-learning/){:target="_blank"}
 
 <img src="/assets/images/deep_learning_feature_eng_imagex2.png" alt="Deep learning feature engineering diagram" class="featured-image" loading="lazy">
 

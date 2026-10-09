@@ -14,6 +14,6 @@ I recently did some analysis for my company, [Fullstory](https://www.fullstory.c
 
 I figured spotting Muse would be easy. But Muse never introduced itself. No user agent string giving it away, no label announcing it was autonomous. I had to let its behavior do the talking. The article walks through which signals came up short, what finally told the agent apart from a person, and how you can start looking for agents on your own site. The agents may be quiet, but the data isn't.
 
-[Read more here!](https://www.fullstory.com/resources/engineers/muse-is-here-what-can-you-see-with-fullstory/){:target="_blank"}
+[Read the full post on Fullstory →](https://www.fullstory.com/resources/engineers/muse-is-here-what-can-you-see-with-fullstory/){:target="_blank"}
 
 <img src="/assets/images/muse-agent-fullstory.png" alt="Fullstory: Muse is here" class="featured-image" loading="lazy">

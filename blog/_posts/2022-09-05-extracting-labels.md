@@ -13,7 +13,7 @@ In the blog post [Configuring a Neural Network Output Layer](/blog/2022/05/03/co
 
 In this post, I’ll answer these types of questions and more by showing how to extract target labels from deep learning classification models.
 
-[Read more here!](https://www.enthought.com/blog/deep-learning-extracting/){:target="_blank"}
+[Read the full post on Enthought →](https://www.enthought.com/blog/deep-learning-extracting/){:target="_blank"}
 
 <img src="/assets/images/extracting-target-labels.png" alt="Extracting target labels from deep learning models diagram" class="featured-image" loading="lazy">
 
