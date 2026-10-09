@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Build a scalable feature engineering pipeline with polars | Fullstory"
+title:  "Build a scalable feature engineering pipeline with polars"
 date:   2025-09-23 08:00:00 -0500
 author: Logan Thomas
 categories: blog

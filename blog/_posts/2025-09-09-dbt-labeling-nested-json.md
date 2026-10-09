@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A practical guide to processing Fullstory events with dbt | Fullstory"
+title:  "A practical guide to processing Fullstory events with dbt"
 date:   2025-09-09 08:00:00 -0500
 author: Logan Thomas
 categories: blog

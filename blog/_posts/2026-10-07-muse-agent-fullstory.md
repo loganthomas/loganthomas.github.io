@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Muse is here. Can you see what it's doing on your site? Fullstory can. | Fullstory"
+title:  "Muse is here. Can you see what it's doing on your site? Fullstory can."
 date:   2026-10-07 08:00:00 -0500
 author: Logan Thomas
 categories: blog

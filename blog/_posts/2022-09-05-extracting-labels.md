@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: deep-learning
 ---
-### [Extracting Target Labels from Deep Learning Classification Models - Enthought, Inc.](https://web.archive.org/web/20250712160547/https://www.enthought.com/blog/deep-learning-extracting/){:target="_blank"}
+### [Extracting Target Labels from Deep Learning Classification Models | Enthought](https://web.archive.org/web/20250712160547/https://www.enthought.com/blog/deep-learning-extracting/){:target="_blank"}
 In the blog post [Configuring a Neural Network Output Layer](/blog/2022/05/03/configuring-nn-output-layer) I highlighted how to correctly set up an output layer for deep learning models. Here, I discuss how to make sense of what a neural network actually returns from the output layers. If you are like me, you may have been surprised when you first encountered the output of a simple classification neural net.
 
 **“Wait… I thought this was supposed to give me an array of integers that was similar to my target variable. Why am I seeing floating point numbers? What do these numbers even mean?”**
