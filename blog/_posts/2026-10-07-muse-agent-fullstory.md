@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: data-science
 ---
-### [Muse is here. Can you see what it's doing on your site? Fullstory can. | Fullstory](https://www.fullstory.com/resources/engineers/muse-is-here-what-can-you-see-with-fullstory/){:target="_blank"}
+### [Muse is here. Can you see what it's doing on your site? Fullstory can.](https://www.fullstory.com/resources/engineers/muse-is-here-what-can-you-see-with-fullstory/){:target="_blank"}
 
 Agents don't always say they're agents. But their behavior does.
 

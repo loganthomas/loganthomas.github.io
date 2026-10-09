@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: deep-learning
 ---
-### [Configuring a Neural Network Output Layer | Enthought](https://web.archive.org/web/20250914090846/https://www.enthought.com/blog/neural-network-output-layer/){:target="_blank"}
+### [Configuring a Neural Network Output Layer](https://web.archive.org/web/20250914090846/https://www.enthought.com/blog/neural-network-output-layer/){:target="_blank"}
 If you have used `TensorFlow` before, you know how easy it is to create a simple neural network model using the `Keras` API.
 Just create an instance of the `Sequential` model class, add the number of desired layers and accompanying layer nodes, define the activation functions to be used by each layer, and compile your model by providing an optimizer and loss function.  Right?
 While this process is simple enough to grasp conceptually, it can quickly become an ambiguous task for those just getting started in deep learning.

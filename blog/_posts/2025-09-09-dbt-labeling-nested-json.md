@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: python data-science machine-learning data-engineering
 ---
-### [A practical guide to processing Fullstory events with dbt | Fullstory](https://www.fullstory.com/blog/dbt-labeling-nested-json-for-ml/){:target="_blank"}
+### [A practical guide to processing Fullstory events with dbt](https://www.fullstory.com/blog/dbt-labeling-nested-json-for-ml/){:target="_blank"}
 
 Behavioral data holds immense potential for machine learning applications, but extracting meaningful insights from raw event streams can be challenging. This post explores how to transform nested `JSON` from Fullstory's behavioral data into structured, labeled datasets using [dbt (data build tool)](https://docs.getdbt.com/docs/introduction){:target="_blank"}.
 

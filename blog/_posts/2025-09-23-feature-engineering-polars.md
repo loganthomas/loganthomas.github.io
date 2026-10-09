@@ -6,7 +6,7 @@ author: Logan Thomas
 categories: blog
 tags: python data-science machine-learning data-engineering
 ---
-### [Build a scalable feature engineering pipeline with polars | Fullstory](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
+### [Build a scalable feature engineering pipeline with polars](https://www.fullstory.com/blog/feature-engineering-pipeline-with-polars/){:target="_blank"}
 
 Feature engineering is the bridge between raw data and machine learning insights. This post demonstrates how to build production-ready feature engineering pipelines using [Polars](https://pola.rs/){:target="_blank"}, a high-performance `DataFrame` library that balances speed with developer experience.
 
