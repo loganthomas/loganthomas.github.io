@@ -10,7 +10,7 @@ tags: data-science
 
 Agents don't always say they're agents. But their behavior does.
 
-I recently did some analysis for my company, [Fullstory](https://www.fullstory.com/){:target="_blank"}, on a new kind of visitor: autonomous computer-use agents. I handed one of them, Muse, a real errand on a mock shopping site: buy fruit for a 20-kid halftime snack, delivered by Friday. It searched, compared, and filled a cart. Then I ran the same errand myself, like a good parent, and complained plenty.
+I recently did some analysis for my company, [Fullstory](https://www.fullstory.com/){:target="_blank"}, on a new kind of visitor: autonomous computer-use agents. I handed one of them, Muse, a real errand on a mock shopping site: buy fruit for a 20-kid halftime snack, delivered by Friday. It searched, compared, and filled a cart. Then I ran the same errand myself, like a good parent.
 
 I figured spotting Muse would be easy. Build a segment, watch a few sessions, done by lunch. I was, in fact, not done by lunch. Muse never introduced itself, and none of our signals built to catch agents by name made a peep. The one that did fire, "the mouse didn't move," also fired on over a million other sessions that day. Turns out people leave the mouse alone all the time. We read. We get up for coffee.
 
