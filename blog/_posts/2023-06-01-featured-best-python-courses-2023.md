@@ -15,7 +15,7 @@ Drawing on this experience, I've been fortunate enough to spend the past 2 years
 more great courses like this for Enthought!
 
 If you're interested in python, data analytics, machine learning, or software development,
-check out one of our many courses in the [Enthought Academy](https://www.enthought.com/course-catalog/){:target="_blank"}.
+check out one of our many courses in the [Enthought Academy](https://web.archive.org/web/20230604132935/https://www.enthought.com/course-catalog/){:target="_blank"}.
 As a co-author for many of these courses, I can attest to the fantastic quality of these offerings.
 
 Thank you to [Adeola Adegunwa](https://www.aitimejournal.com/author/adeola-adegunwa/){:target="_blank"}
