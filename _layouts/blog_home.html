@@ -36,7 +36,7 @@ layout: default
       {% assign tag_posts = tag[1] %}
       <li>
         <a href="{{ '/tags/' | append: tag_name | relative_url }}">
-          <code>{{ tag_name }}</code> ({{ tag_posts.size }})
+          <code>{{ tag_name }} <span class="tag-count">{{ tag_posts.size }}</span></code>
         </a>
       </li>
     {% endfor %}

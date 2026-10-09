@@ -436,15 +436,14 @@ body {
     white-space: nowrap;
 }
 
-// Tag list styles (one per line)
+// Tag list styles (wrapping chips)
 .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 0.5rem;
     list-style: none;
     padding: 0;
     margin: 1rem 0;
-
-    li {
-        margin: 0.5rem 0;
-    }
 
     a {
         text-decoration: none;
@@ -461,6 +460,11 @@ body {
             background-color: #ddd6fe;
             border-color: #a5b4fc;
         }
+    }
+
+    .tag-count {
+        color: var(--text-color-light);
+        margin-left: 0.25rem;
     }
 }
 
