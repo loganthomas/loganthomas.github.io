@@ -187,14 +187,14 @@ body {
   }
 
   // Tag styles
-  .tag-list a code,
+  .tag-list a,
   .post-tags .highlighter-rouge {
     background-color: var(--tag-bg);
     border-color: var(--tag-border);
     color: var(--text-color);
   }
 
-  .tag-list a:hover code {
+  .tag-list a:hover {
     background-color: var(--tag-hover-bg);
     border-color: var(--tag-hover-border);
   }
@@ -436,35 +436,47 @@ body {
     white-space: nowrap;
 }
 
-// Tag list styles (wrapping chips)
+// Tag list styles (equal-width chips in a grid so names and counts line up)
 .tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: 0.5rem;
     list-style: none;
     padding: 0;
     margin: 1rem 0;
 
+    li {
+        margin: 0;
+    }
+
     a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.35rem 0.75rem;
+        background-color: #eef2ff;
+        border: 1px solid #c7d2fe;
+        border-radius: 0.25rem;
         text-decoration: none;
 
-        code {
-            background-color: #eef2ff;
-            border: 1px solid #c7d2fe;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.95em;
-        }
-
-        &:hover code {
+        &:hover {
             background-color: #ddd6fe;
             border-color: #a5b4fc;
+        }
+
+        code {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 0.95em;
+            white-space: nowrap;
         }
     }
 
     .tag-count {
         color: var(--text-color-light);
-        margin-left: 0.25rem;
+        font-size: 0.875em;
+        font-variant-numeric: tabular-nums;
     }
 }
 

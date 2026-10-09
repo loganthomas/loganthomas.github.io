@@ -29,17 +29,28 @@ layout: default
   <hr class="section-divider">
 
   <h2>Browse by Tag</h2>
+  {%- comment -%}
+    Liquid can't sort a hash by value,
+    so each tag gets a "<inverted count>|<name>" key that sorts by count descending,
+    then alphabetically within ties.
+  {%- endcomment -%}
+  {%- assign tag_keys = "" | split: "" -%}
+  {%- for tag in site.tags -%}
+    {%- assign inverted = 1000 | minus: tag[1].size | prepend: "000" | slice: -4, 4 -%}
+    {%- assign tag_key = inverted | append: "|" | append: tag[0] -%}
+    {%- assign tag_keys = tag_keys | push: tag_key -%}
+  {%- endfor -%}
+  {%- assign tag_keys = tag_keys | sort -%}
   <ul class="tag-list">
-    {% assign sorted_tags = site.tags | sort %}
-    {% for tag in sorted_tags %}
-      {% assign tag_name = tag[0] %}
-      {% assign tag_posts = tag[1] %}
+    {%- for tag_key in tag_keys -%}
+      {%- assign tag_name = tag_key | split: "|" | last -%}
       <li>
         <a href="{{ '/tags/' | append: tag_name | relative_url }}">
-          <code>{{ tag_name }} <span class="tag-count">{{ tag_posts.size }}</span></code>
+          <code>{{ tag_name }}</code>
+          <span class="tag-count">{{ site.tags[tag_name].size }}</span>
         </a>
       </li>
-    {% endfor %}
+    {%- endfor -%}
   </ul>
 
   <hr class="section-divider">
