@@ -3,14 +3,18 @@ layout: page
 title: Turkey Bowl
 permalink: /turkey-bowl/
 ---
-<h1 class="text-center">Congratulations Yeager!</h1>
-<h2 class="text-center">
-  <span style="white-space: nowrap;"><img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"> 🏆</span>
-  You are the current Turkey Bowl Champion
-  <span style="white-space: nowrap;">🏆 <img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"></span>
-</h2>
+<section class="tb-champion" aria-label="Reigning champion">
+  <img class="tb-champion__badge" src="/assets/images/icons/turkey-bowl.svg" alt="">
+  <div>
+    <p class="tb-champion__eyebrow">🏆 Reigning Champion · 2025</p>
+    <p class="tb-champion__name">Yeager</p>
+    <p class="tb-champion__meta">120.54 points · 4th title · <a href="/turkey-bowl/archive/2025/">2025 recap →</a></p>
+  </div>
+</section>
 
-| Year                               | Winner                         | Total Points   |
+## Champions
+
+| Year                               | Champion                       | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
 | [2025](/turkey-bowl/archive/2025/) | Yeager                         | 120.54         |
 | [2024](/turkey-bowl/archive/2024/) | Logan                          | 130.96         |
@@ -28,13 +32,12 @@ permalink: /turkey-bowl/
 
 ## Hall of Fame
 
-| Participant | Wins |
-| :---------- | :--- |
-| Yeager      | 4    |
-| Dodd        | 3    |
-| Cindy       | 1    |
-| Becca       | 1    |
-| Logan       | 1    |
-
+| Participant | Titles | Years                  |
+| :---------- | :----- | :--------------------- |
+| Yeager      | 4      | 2016, 2020, 2022, 2025 |
+| Dodd        | 3      | 2015, 2018, 2021       |
+| Becca       | 1      | 2023                   |
+| Logan       | 1      | 2024                   |
+| Cindy       | 1      | 2019                   |
 
 [Archived Results](/turkey-bowl/archive/)
