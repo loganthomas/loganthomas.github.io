@@ -867,3 +867,43 @@ body.repl-page-body {
         grid-template-columns: 1fr;
     }
 }
+
+// Turkey Bowl reigning-champion card
+.tb-champion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 8px 0 32px;
+    padding: 20px 24px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid #D9682F;
+    border-radius: 8px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.tb-champion__badge {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+}
+
+.tb-champion__eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-color-light);
+}
+
+.tb-champion__name {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.tb-champion__meta {
+    color: var(--text-color-light);
+}
