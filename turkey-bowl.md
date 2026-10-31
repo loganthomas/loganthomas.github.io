@@ -4,7 +4,11 @@ title: Turkey Bowl
 permalink: /turkey-bowl/
 ---
 <h1 class="text-center">Congratulations Yeager!</h1>
-<h1 class="text-center"><img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"> :trophy: You are the current Turkey Bowl Champion :trophy: <img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"></h1>
+<h2 class="text-center">
+  <span style="white-space: nowrap;"><img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"> 🏆</span>
+  You are the current Turkey Bowl Champion
+  <span style="white-space: nowrap;">🏆 <img src="/assets/images/icons/turkey-bowl.svg" alt="Turkey Bowl" style="height: 1.2em; vertical-align: middle;"></span>
+</h2>
 
 | Year                               | Winner                         | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
