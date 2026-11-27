@@ -907,3 +907,12 @@ body.repl-page-body {
 .tb-champion__meta {
     color: var(--text-color-light);
 }
+
+.tb-chart {
+    display: block;
+    width: 100%;
+    height: 680px;
+    margin: 16px 0;
+    border: 0;
+    border-radius: 8px;
+}
