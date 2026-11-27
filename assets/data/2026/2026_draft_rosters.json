@@ -1,0 +1,374 @@
+{
+  "emily": [
+    {
+      "slot": "QB",
+      "player_name": "Patrick Mahomes",
+      "player_team": "KC",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "Jahmyr Gibbs",
+      "player_team": "DET",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "Ray Davis",
+      "player_team": "BUF",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "DeVonta Smith",
+      "player_team": "PHI",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "Khalil Shakir",
+      "player_team": "BUF",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Dallas Goedert",
+      "player_team": "PHI",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Xavier Worthy",
+      "player_team": "KC",
+      "player_position": "WR"
+    },
+    {
+      "slot": "K",
+      "player_name": "Harrison Butker",
+      "player_team": "KC",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Buffalo Bills",
+      "player_team": "BUF",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "Elijah Moore",
+      "player_team": "PHI",
+      "player_position": "WR"
+    }
+  ],
+  "yeager": [
+    {
+      "slot": "QB",
+      "player_name": "Caleb Williams",
+      "player_team": "CHI",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "Emmett Johnson",
+      "player_team": "KC",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "Jashaun Corbin",
+      "player_team": "DAL",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "George Pickens",
+      "player_team": "DAL",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "DJ Moore",
+      "player_team": "BUF",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Brevyn Spann-Ford",
+      "player_team": "DAL",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Rome Odunze",
+      "player_team": "CHI",
+      "player_position": "WR"
+    },
+    {
+      "slot": "K",
+      "player_name": "Jake Bates",
+      "player_team": "DET",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Detroit Lions",
+      "player_team": "DET",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "Keon Coleman",
+      "player_team": "BUF",
+      "player_position": "WR"
+    }
+  ],
+  "logan": [
+    {
+      "slot": "QB",
+      "player_name": "Jared Goff",
+      "player_team": "DET",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "James Cook III",
+      "player_team": "BUF",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "D'Andre Swift",
+      "player_team": "CHI",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "Rashee Rice",
+      "player_team": "KC",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "Ryan Flournoy",
+      "player_team": "DAL",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Dalton Kincaid",
+      "player_team": "BUF",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Kyle Monangai",
+      "player_team": "CHI",
+      "player_position": "RB"
+    },
+    {
+      "slot": "K",
+      "player_name": "Jake Elliott",
+      "player_team": "PHI",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Philadelphia Eagles",
+      "player_team": "PHI",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "Makai Lemon",
+      "player_team": "PHI",
+      "player_position": "WR"
+    }
+  ],
+  "cindy": [
+    {
+      "slot": "QB",
+      "player_name": "Josh Allen",
+      "player_team": "BUF",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "Ty Johnson",
+      "player_team": "BUF",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "Jaydn Ott",
+      "player_team": "KC",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "Luther Burden III",
+      "player_team": "CHI",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "Kalif Raymond",
+      "player_team": "CHI",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Travis Kelce",
+      "player_team": "KC",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Cyrus Allen",
+      "player_team": "KC",
+      "player_position": "WR"
+    },
+    {
+      "slot": "K",
+      "player_name": "Tyler Bass",
+      "player_team": "BUF",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Dallas Cowboys",
+      "player_team": "DAL",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "Tyrell Shavers",
+      "player_team": "BUF",
+      "player_position": "WR"
+    }
+  ],
+  "becca": [
+    {
+      "slot": "QB",
+      "player_name": "Dak Prescott",
+      "player_team": "DAL",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "Javonte Williams",
+      "player_team": "DAL",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "Will Shipley",
+      "player_team": "PHI",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "CeeDee Lamb",
+      "player_team": "DAL",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "Josh Downs",
+      "player_team": "KC",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Sam LaPorta",
+      "player_team": "DET",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Isaac TeSlaa",
+      "player_team": "DET",
+      "player_position": "WR"
+    },
+    {
+      "slot": "K",
+      "player_name": "Cairo Santos",
+      "player_team": "CHI",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Chicago Bears",
+      "player_team": "CHI",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "KaVontae Turpin",
+      "player_team": "DAL",
+      "player_position": "WR"
+    }
+  ],
+  "dodd": [
+    {
+      "slot": "QB",
+      "player_name": "Joe Milton",
+      "player_team": "PHI",
+      "player_position": "QB"
+    },
+    {
+      "slot": "RB_1",
+      "player_name": "Saquon Barkley",
+      "player_team": "PHI",
+      "player_position": "RB"
+    },
+    {
+      "slot": "RB_2",
+      "player_name": "Sione Vaki",
+      "player_team": "DET",
+      "player_position": "RB"
+    },
+    {
+      "slot": "WR_1",
+      "player_name": "Amon-Ra St. Brown",
+      "player_team": "DET",
+      "player_position": "WR"
+    },
+    {
+      "slot": "WR_2",
+      "player_name": "Jameson Williams",
+      "player_team": "DET",
+      "player_position": "WR"
+    },
+    {
+      "slot": "TE",
+      "player_name": "Colston Loveland",
+      "player_team": "CHI",
+      "player_position": "TE"
+    },
+    {
+      "slot": "Flex (RB/WR)",
+      "player_name": "Darius Cooper",
+      "player_team": "PHI",
+      "player_position": "WR"
+    },
+    {
+      "slot": "K",
+      "player_name": "Brandon Aubrey",
+      "player_team": "DAL",
+      "player_position": "K"
+    },
+    {
+      "slot": "Defense (Team Name)",
+      "player_name": "Kansas City Chiefs",
+      "player_team": "KC",
+      "player_position": "DEF"
+    },
+    {
+      "slot": "Bench (RB/WR)",
+      "player_name": "Zavion Thomas",
+      "player_team": "CHI",
+      "player_position": "WR"
+    }
+  ]
+}

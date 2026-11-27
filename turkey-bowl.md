@@ -6,9 +6,9 @@ permalink: /turkey-bowl/
 <section class="tb-champion" aria-label="Reigning champion">
   <img class="tb-champion__badge" src="/assets/images/icons/turkey-bowl.svg" alt="">
   <div>
-    <p class="tb-champion__eyebrow">🏆 Reigning Champion · 2025</p>
-    <p class="tb-champion__name">Yeager</p>
-    <p class="tb-champion__meta">120.54 points · 4th title · <a href="/turkey-bowl/archive/2025/">2025 recap →</a></p>
+    <p class="tb-champion__eyebrow">🏆 Reigning Champion · 2026</p>
+    <p class="tb-champion__name">Emily</p>
+    <p class="tb-champion__meta">116.16 points · 1st title · <a href="/turkey-bowl/archive/2026/">2026 recap →</a></p>
   </div>
 </section>
 
@@ -16,6 +16,7 @@ permalink: /turkey-bowl/
 
 | Year                               | Champion                       | Total Points   |
 | :--------------------------------- | :----------------------------- | :------------- |
+| [2026](/turkey-bowl/archive/2026/) | Emily                          | 116.16         |
 | [2025](/turkey-bowl/archive/2025/) | Yeager                         | 120.54         |
 | [2024](/turkey-bowl/archive/2024/) | Logan                          | 130.96         |
 | [2023](/turkey-bowl/archive/2023/) | Becca                          | 130.50         |
@@ -36,6 +37,7 @@ permalink: /turkey-bowl/
 | :---------- | :----- | :--------------------- |
 | Yeager      | 4      | 2016, 2020, 2022, 2025 |
 | Dodd        | 3      | 2015, 2018, 2021       |
+| Emily       | 1      | 2026                   |
 | Becca       | 1      | 2023                   |
 | Logan       | 1      | 2024                   |
 | Cindy       | 1      | 2019                   |
